@@ -15,22 +15,41 @@ class RolePermissionSeeder extends Seeder
      */
     public function run(): void
     {
-        Role::create(['name' => 'superadmin']);
-        Role::create(['name' => 'admin']);
+        // Reset cached roles and permissions
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-        Permission::create(['name' => 'manage_users']);
-        Permission::create(['name' => 'manage_web_contents']);
-        Permission::create(['name' => 'manage_telegram']);
-        Permission::create(['name' => 'manage_contacts_us']);
-        Permission::create(['name' => 'manage_video_blogs']);
+        // Create permissions
+        $permissions = [
+            'manage_users',
+            'manage_web_contents',
+            'manage_telegram',
+            'manage_contacts_us',
+            'manage_video_blogs'
+        ];
 
-        // Menambahkan role dan permission ke user
-        $administrator = User::factory()->create();
-        $administrator->assignRole('superadmin');
-        $administrator->givePermissionTo(['manage_users', 'manage_web_contents', 'manage_telegram', 'manage_contacts_us', 'manage_video_blogs']);
+        foreach ($permissions as $permission) {
+            Permission::create(['name' => $permission]);
+        }
 
-        $admin_biasa = User::factory()->create();
-        $admin_biasa->assignRole('admin');
-        $admin_biasa->givePermissionTo(['manage_web_contents', 'manage_contacts_us', 'manage_video_blogs']);
+        // Create roles and assign created permissions
+        $superadminRole = Role::create(['name' => 'superadmin']);
+        // This will now populate the 'role_has_permissions' table
+        $superadminRole->givePermissionTo(Permission::all());
+
+        $adminRole = Role::create(['name' => 'admin']);
+        $adminRole->givePermissionTo(['manage_web_contents', 'manage_contacts_us', 'manage_video_blogs']);
+
+        // Create a demo user for each role. They will inherit permissions from the role.
+        $administrator = User::factory()->create([
+            'name' => 'Super Admin User',
+            'email' => 'superadmin@example.com',
+        ]);
+        $administrator->assignRole($superadminRole);
+
+        $admin_biasa = User::factory()->create([
+            'name' => 'Admin User',
+            'email' => 'admin@example.com',
+        ]);
+        $admin_biasa->assignRole($adminRole);
     }
 }

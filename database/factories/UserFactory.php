@@ -24,7 +24,6 @@ class UserFactory extends Factory
     public function definition(): array
     {
         $password = static::$password ??= Hash::make('password');
-        var_dump($password);
 
         return [
             'name' => fake()->name(),
