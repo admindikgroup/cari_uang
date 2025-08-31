@@ -1,0 +1,47 @@
+@use '../utils' as *;
+
+/*=============================
+    	04. Brand
+===============================*/
+.brand {
+    &__area {
+        padding: 200px 0 0;
+    }
+    &__item {
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        & img {
+            opacity: .5;
+            cursor: pointer;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        &-wrap {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 380px;
+                height: 100%;
+                background: linear-gradient(90deg, rgba(21, 21, 21, 1) 0%, rgba(21, 21, 21, 0) 100%);
+                z-index: 2;
+                pointer-events: none;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 380px;
+                height: 100%;
+                background: linear-gradient(90deg, rgba(21, 21, 21, 0) 0%, #151515 100%);
+                z-index: 2;
+                pointer-events: none;
+            }
+        }
+    }
+}

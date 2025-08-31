@@ -1,0 +1,66 @@
+@use '../utils' as *;
+
+/*=============================
+    	11. FAQ
+===============================*/
+.faq {
+    &__img {
+        @media #{$md} {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    }
+    &__wrap {
+        & .accordion {
+            &-item {
+                margin-bottom: 16px;
+                background: linear-gradient(140deg, #222325 0%, rgba(21, 21, 21, 0) 100%);
+                border: 1px solid var(--tg-border-1);
+                @include border-radius(10px !important);
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            &-button {
+                border: none;
+                background: transparent;
+                font-weight: 600;
+                font-size: 20px;
+                color: var(--tg-color-white-default);
+                padding: 18px 55px 18px 24px;
+                position: relative;
+                &::before {
+                    content: "\f109";
+                    font-family: "flaticon_tg_default";
+                    font-weight: 400;
+                    position: absolute;
+                    right: 24px;
+                    top: 21px;
+                    font-size: 16px;
+                }
+                &:focus {
+                    border-color: none;
+                    box-shadow: none;
+                }
+                &:not(.collapsed) {
+                    color: var(--tg-color-white-default);
+                    background-color: transparent;
+                    box-shadow: none;
+                    &::before {
+                        content: "\f10a";
+                    }
+                }
+                &::after {
+                    display: none;
+                }
+            }
+            &-body {
+                padding: 4px 24px 26px;
+                & p {
+                    margin-bottom: 0;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

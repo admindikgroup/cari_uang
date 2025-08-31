@@ -1,0 +1,47 @@
+
+// Font URL
+$font-url: 'https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap';
+// Font Family
+$theme-fonts: (
+    body: (
+        font-family: "'Parkinsans', sans-serif",
+    ),
+    heading: (
+        font-family: "'Parkinsans', sans-serif",
+    ),
+    icon: (
+        font-family: '"Font Awesome 5 Free"',
+    )
+);
+
+
+// Font Size
+$font-size: (
+    body: (
+        font-size: 16px,
+    ),
+);
+
+
+// Line Height
+$theme-lh: (
+    body: (
+        line-height: 1.5,
+    ),
+    heading: (
+        line-height: 1.2,
+    ),
+);
+
+
+// Font Weight
+$font-weight: (
+    fw: (
+        extra-bold: 800,
+        bold: 700,
+        semi-bold: 600,
+        medium: 500,
+        regular: 400,
+        light: 300,
+    ),
+);

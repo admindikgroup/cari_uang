@@ -1,0 +1,67 @@
+@use '../utils' as *;
+
+/*=============================
+	00. Section Title
+===============================*/
+.section__title {
+    & .sub-title {
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        display: inline-block;
+        line-height: 1;
+        color: var(--tg-primary-color);
+        border: 1px solid var(--tg-border-1);
+        @include border-radius(30px);
+        padding: 6px 10px;
+        margin-bottom: 20px;
+    }
+    & .title {
+        font-size: 48px;
+        letter-spacing: -0.03em;
+        margin-bottom: 0;
+        @media #{$lg} {
+            font-size: 42px;
+        }
+        @media #{$xs} {
+            font-size: 35px;
+        }
+        & span {
+            color: rgba(255, 255, 255, 0.3);
+        }
+    }
+}
+
+.section-divider {
+    & span {
+        height: 1px;
+        background: var(--tg-border-1);
+        display: block;
+    }
+}
+
+.section-py-120 {
+    padding: 120px 0;
+    @media #{$xs} {
+        padding: 100px 0;
+    }
+}
+.section-pt-120 {
+    padding-top: 120px;
+    @media #{$xs} {
+        padding-top: 100px;
+    }
+}
+.section-pb-120 {
+    padding-bottom: 120px;
+    @media #{$xs} {
+        padding-bottom: 100px;
+    }
+}
+
+.section__title.mb-70,
+.section__title.mb-60 {
+    @media #{$md} {
+        margin-bottom: 40px;
+    }
+}

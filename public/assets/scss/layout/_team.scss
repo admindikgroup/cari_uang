@@ -1,0 +1,113 @@
+@use '../utils' as *;
+
+/*=============================
+    	13. Team
+===============================*/
+.team {
+    &__area {
+        background: var(--tg-secondary-color);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    &__content-wrap {
+        width: 80%;
+        @media #{$md} {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        & p {
+            margin-bottom: 50px;
+            font-size: 20px;
+        }
+    }
+    &__item {
+        background: linear-gradient(140deg, #222325 0%, rgba(21, 21, 21, 0) 100%);
+        border: 1px solid var(--tg-border-1);
+        text-align: center;
+        padding: 40px 25px;
+        position: relative;
+        @include border-radius(10px);
+        height: 100%;
+        & .social__icon {
+            & a {
+                position: absolute;
+                right: 18px;
+                top: 18px;
+                & > img {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+    &__thumb {
+        margin-bottom: 40px;
+        & img {
+            @include border-radius(50%);
+        }
+    }
+    &__content {
+        & span {
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            display: inline-block;
+            color: var(--tg-primary-color);
+            border: 1px solid var(--tg-border-1);
+            line-height: 1;
+            @include border-radius(30px);
+            padding: 3px 9px;
+            margin-bottom: 20px;
+        }
+        & .title {
+            margin-bottom: 0;
+            font-size: 24px;
+            @media #{$lg} {
+                font-size: 22px;
+            }
+        }
+    }
+    &__social-wrap {
+        @include flexbox();
+        align-items: center;
+        gap: 15px 30px;
+        flex-wrap: wrap;
+        & .title {
+            font-size: 14px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+        & .list-wrap {
+            @include flexbox();
+            align-items: center;
+            gap: 10px;
+            & li {
+                & a {
+                    position: relative;
+                    @include border-radius(50%);
+                    display: block;
+                    & .icon {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+                }
+            }
+        }
+    }
+    &__shape {
+        position: absolute;
+        right: 32%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
+}
+

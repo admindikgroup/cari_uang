@@ -1,0 +1,25 @@
+@use '../utils' as *;
+
+/*=============================
+    	06. Marquee
+===============================*/
+.marquee {
+    &__item {
+        margin-right: 20px;
+        display: inline;
+        line-height: 1;
+        font-size: 120px;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.3);
+        @media #{$lg} {
+            font-size: 70px;
+        }
+        @media #{$md} {
+            font-size: 60px;
+        }
+        @media #{$xs} {
+            font-size: 45px;
+        }
+    }
+}

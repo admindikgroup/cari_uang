@@ -1,0 +1,94 @@
+@use '../utils' as *;
+
+/*=============================
+    	05. Features
+===============================*/
+.features {
+    &__area {
+        position: relative;
+        z-index: 1;
+    }
+    &__item {
+        background: linear-gradient(135deg, #222325 0%, rgba(21, 21, 21, 0) 100%);
+        border: 1px solid var(--tg-border-1);
+        @include border-radius(10px);
+        @include flexbox();
+        align-items: center;
+        padding: 40px 40px 40px 28px;
+        gap: 28px;
+        height: 100%;
+        @media #{$lg} {
+            padding: 40px 25px 40px 25px;
+            gap: 18px;
+        }
+        @media #{$md} {
+            padding: 40px 30px 40px 30px;
+            gap: 50px;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+        }
+        &:hover {
+            & .features__icon {
+                & img {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+        &-two {
+            display: block;
+            text-align: center;
+            padding: 40px 30px 50px 30px;
+            height: 100%;
+            @media #{$lg} {
+                padding: 40px 30px 40px 30px;
+            }
+            & .features__icon {
+                margin: 0 auto 50px;
+            }
+        }
+    }
+    &__icon {
+        width: 130px;
+        flex: 0 0 auto;
+        text-align: center;
+        @media #{$lg} {
+            width: 120px;
+        }
+    }
+    &__content {
+        & .title {
+            margin-bottom: 16px;
+            font-weight: 600;
+            font-size: 24px;
+            letter-spacing: -0.03em;
+            & span {
+                color: rgba(255, 255, 255, 0.3);
+            }
+        }
+        & p {
+            margin-bottom: 0;
+            font-size: 20px;
+        }
+    }
+    &__shape {
+        position: absolute;
+        left: 50%;
+        top: -28%;
+        transform: translateX(-50%);
+        z-index: -1;
+        pointer-events: none;
+        @media #{$lg} {
+            top: -13%;
+        }
+        @media #{$md} {
+            top: -5%;
+        }
+        @media #{$xs} {
+            top: 2%;
+        }
+        @media #{$sm} {
+            top: -3%;
+        }
+    }
+}

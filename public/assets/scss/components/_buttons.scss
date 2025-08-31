@@ -1,0 +1,52 @@
+@use '../utils' as *;
+
+/*=============================
+	 Button style
+===============================*/
+.tg-btn {
+    user-select: none;
+    -moz-user-select: none;
+    background: var(--tg-primary-color) none repeat scroll 0 0;
+    border: none;
+    color: var(--tg-color-dark);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: var(--tg-fw-semi-bold);
+    font-family: var(--tg-heading-font-family);
+    letter-spacing: 0;
+    line-height: 1;
+    margin-bottom: 0;
+    padding: 18px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    @include transition(.3s);
+    vertical-align: middle;
+    @include border-radius(40px);
+    white-space: nowrap;
+    overflow: hidden;
+    &:hover,
+    &:focus-visible {
+        background: var(--tg-color-white-default);
+        color: var(--tg-color-dark);
+    }
+    &-two {
+        border: 1px solid var(--tg-border-1);
+        background: transparent;
+        color: var(--tg-color-white-default);
+        padding: 17px 20px;
+        & span {
+            color: var(--tg-primary-color);
+            @include transition(.3s);
+            margin-left: 5px;
+        }
+        &:hover {
+            background: var(--tg-primary-color);
+            & span {
+                color: var(--tg-color-dark);
+            }
+        }
+    }
+}

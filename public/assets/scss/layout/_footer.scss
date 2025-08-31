@@ -1,0 +1,113 @@
+@use '../utils' as *;
+
+/*=============================
+    	14. Footer
+===============================*/
+.footer {
+    &__area {
+        position: relative;
+        z-index: 1;
+        &-two {
+            background: var(--tg-secondary-color);
+        }
+    }
+    &__top {
+        padding: 120px 0;
+        @media #{$xs} {
+            padding: 100px 0;
+        }
+    }
+    &__content {
+        text-align: center;
+        & .sub-title {
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            display: inline-block;
+            line-height: 1;
+            color: var(--tg-primary-color);
+            border: 1px solid var(--tg-border-1);
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            -o-border-radius: 30px;
+            -ms-border-radius: 30px;
+            border-radius: 30px;
+            padding: 6px 10px;
+            margin-bottom: 20px;
+        }
+        & .title {
+            margin-bottom: 50px;
+            font-size: 64px;
+            @media #{$lg} {
+                font-size: 54px;
+            }
+            @media #{$xs} {
+                font-size: 40px;
+                margin-bottom: 30px;
+            }
+            & span {
+                color: rgba(255, 255, 255, 0.3);
+            }
+        }
+        & .team__social-wrap {
+            justify-content: center;
+        }
+    }
+    &__logo {
+        margin-bottom: 80px;
+        @media #{$xs} {
+            margin-bottom: 50px;
+        }
+    }
+    &__bottom {
+        border-top: 1px solid var(--tg-border-1);
+        padding: 26px 0;
+    }
+    &__shape {
+        & img {
+            position: absolute;
+            z-index: -1;
+            &:nth-child(1) {
+                right: 8%;
+                top: 16%;
+                @media #{$xxl} {
+                    right: 4%;
+                    top: 8%;
+                }
+                @media #{$xl} {
+                    width: 180px;
+                }
+                @media #{$lg} {
+                    width: 140px;
+                }
+                @media #{$xs} {
+                    width: 80px;
+                    top: 4%;
+                }
+            }
+            &:nth-child(2) {
+                bottom: 16%;
+                left: 11%;
+                @media #{$xl} {
+                    left: 6%;
+                    width: 170px;
+                }
+                @media #{$lg} {
+                    width: 130px;
+                }
+                @media #{$xs} {
+                    width: 70px;
+                    bottom: 12%;
+                }
+            }
+        }
+    }
+}
+
+.copyright-text {
+    text-align: center;
+    & p {
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+}

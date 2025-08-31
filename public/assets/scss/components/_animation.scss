@@ -1,0 +1,252 @@
+@use '../utils' as *;
+
+/*=============================
+    00. Keyframe Animation
+===============================*/
+@-webkit-keyframes hoverShine {
+    100% {
+        left: 125%;
+    }
+}
+@keyframes hoverShine {
+    100% {
+        left: 125%;
+    }
+}
+
+.rotateme {
+  -webkit-animation-name: rotateme;
+  animation-name: rotateme;
+  -webkit-animation-duration: 40s;
+  animation-duration: 40s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+@keyframes rotateme {
+  from {
+    -webkit-transform: rotate(0deg);
+     transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotateme {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.alltuchtopdown {
+	-webkit-animation: alltuchtopdown 5s ease-in-out 0s infinite alternate;
+	animation: alltuchtopdown 5s ease-in-out 0s infinite alternate;
+	animation-duration: 3s;
+}
+@keyframes alltuchtopdown {
+    0% {
+        -webkit-transform: rotateX(0deg) translateY(0px);
+        -moz-transform: rotateX(0deg) translateY(0px);
+        -ms-transform: rotateX(0deg) translateY(0px);
+        -o-transform: rotateX(0deg) translateY(0px);
+        transform: rotateX(0deg) translateY(0px);
+    }
+    50% {
+        -webkit-transform: rotateX(0deg) translateY(-20px);
+        -moz-transform: rotateX(0deg) translateY(-20px);
+        -ms-transform: rotateX(0deg) translateY(-20px);
+        -o-transform: rotateX(0deg) translateY(-20px);
+        transform: rotateX(0deg) translateY(-20px);
+    }
+    100% {
+        -webkit-transform: rotateX(0deg) translateY(0px);
+        -moz-transform: rotateX(0deg) translateY(0px);
+        -ms-transform: rotateX(0deg) translateY(0px);
+        -o-transform: rotateX(0deg) translateY(0px);
+        transform: rotateX(0deg) translateY(0px);
+    }
+    }
+
+    @-webkit-keyframes alltuchtopdown {
+    0% {
+        -webkit-transform: rotateX(0deg) translateY(0px);
+        -moz-transform: rotateX(0deg) translateY(0px);
+        -ms-transform: rotateX(0deg) translateY(0px);
+        -o-transform: rotateX(0deg) translateY(0px);
+        transform: rotateX(0deg) translateY(0px);
+    }
+    50% {
+        -webkit-transform: rotateX(0deg) translateY(-20px);
+        -moz-transform: rotateX(0deg) translateY(-20px);
+        -ms-transform: rotateX(0deg) translateY(-20px);
+        -o-transform: rotateX(0deg) translateY(-20px);
+        transform: rotateX(0deg) translateY(-20px);
+    }
+    100% {
+        -webkit-transform: rotateX(0deg) translateY(0px);
+        -moz-transform: rotateX(0deg) translateY(0px);
+        -ms-transform: rotateX(0deg) translateY(0px);
+        -o-transform: rotateX(0deg) translateY(0px);
+        transform: rotateX(0deg) translateY(0px);
+    }
+}
+
+.img-custom-anim-left {
+    animation: img-anim-left 1.3s forwards cubic-bezier(.645, .045, .355, 1) .4s;
+    opacity: 0;
+}
+@keyframes img-anim-left {
+  0% {
+      transform: translateX(-5%);
+      clip-path: inset(0 100% 0 0);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateX(0);
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+  }
+}
+
+.img-custom-anim-right {
+  animation: img-anim-right 1.3s forwards cubic-bezier(.645,.045,.355,1) .4s;
+  opacity: 0;
+}
+@keyframes img-anim-right {
+  0% {
+      transform: translateX(5%);
+      clip-path: inset(0 0 0 100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+  }
+}
+
+
+.img-custom-anim-top {
+  animation: img-anim-top 1.3s forwards cubic-bezier(.645,.045,.355,1);
+  opacity: 0;
+}
+@keyframes img-anim-top {
+  0% {
+      transform: translateY(-5%);
+      clip-path: inset(0 0 100% 0);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateY(0);
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp2 {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.fadeInUp2 {
+    -webkit-animation-name: fadeInUp2;
+    animation-name: fadeInUp2;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+
+@keyframes fadeRight2 {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(100px);
+        -ms-transform: translateX(100px);
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+.fadeRight2 {
+    -webkit-animation-name: fadeRight2;
+    animation-name: fadeRight2;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+	opacity: 1;
+	}
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+	opacity: 0;
+	}
+}
+@-webkit-keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+	opacity: 1;
+	}
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+	opacity: 0;
+	}
+}
+
+.shine__animate-link {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.shine__animate-link::before {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  -webkit-transform: skewX(-25deg);
+  -ms-transform: skewX(-25deg);
+  transform: skewX(-25deg);
+}
+.shine__animate-item:hover .shine__animate-link::before {
+  -webkit-animation: hoverShine 1.2s;
+  animation: hoverShine 1.2s;
+}
