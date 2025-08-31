@@ -8,18 +8,18 @@
     <meta name="description" content="Webze - Blockchain & ICO HTML Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/default-icons.css">
-    <link rel="stylesheet" href="assets/css/default.css">
-    <link rel="stylesheet" href="assets/css/aos.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/default-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 </head>
 
 <body>
@@ -45,7 +45,7 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.svg" alt="Logo"></a>
+                                    <a href="index.html"><img src="{{ asset('assets/img/logo/logo.svg') }}" alt="Logo"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
@@ -82,7 +82,7 @@
             <nav class="tgmobile__menu-box">
                 <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
                 <div class="nav-logo">
-                    <a href="index.html"><img src="assets/img/logo/logo.svg" alt="Logo"></a>
+                    <a href="index.html"><img src="{{ asset('assets/img/logo/logo.svg') }}" alt="Logo"></a>
                 </div>
                 <div class="tgmobile__search">
                     <form action="#">
@@ -116,7 +116,7 @@
     <main class="main-area fix">
 
         <!-- breadcrumb-area -->
-        <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/banner/breadcrumb_bg.svg">
+        <section class="breadcrumb__area breadcrumb__bg" data-background="{{ asset('assets/img/banner/breadcrumb_bg.svg') }}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -128,7 +128,7 @@
                 </div>
             </div>
             <div class="breadcrumb__shape">
-                <img src="assets/img/images/features_shape.png" alt="">
+                <img src="{{ asset('assets/img/images/features_shape.png') }}" alt="">
             </div>
         </section>
         <!-- breadcrumb-area-end -->
@@ -141,12 +141,12 @@
                         <div class="row gutter-40">
                             <div class="col-md-6">
                                 <div class="blog__details-thumb">
-                                    <img src="assets/img/blog/blog_details_img01.jpg" alt="img">
+                                    <img src="{{ asset('assets/img/blog/blog_details_img01.jpg') }}" alt="img">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="blog__details-thumb">
-                                    <img src="assets/img/blog/blog_details_img02.jpg" alt="img">
+                                    <img src="{{ asset('assets/img/blog/blog_details_img02.jpg') }}" alt="img">
                                 </div>
                             </div>
                         </div>
@@ -160,7 +160,7 @@
                             <div class="row align-items-center justify-content-center">
                                 <div class="col-lg-6 col-md-8">
                                     <div class="blog__details-inner-thumb">
-                                        <img src="assets/img/blog/blog_details_img03.jpg" alt="img">
+                                        <img src="{{ asset('assets/img/blog/blog_details_img03.jpg') }}" alt="img">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -200,7 +200,7 @@
                     <div class="col-lg-8">
                         <div class="footer__content">
                             <div class="footer__logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.svg" alt="logo"></a>
+                                <a href="index.html"><img src="{{ asset('assets/img/logo/logo.svg') }}" alt="logo"></a>
                             </div>
                             <span class="sub-title">Built on web3. Powered by You</span>
                             <h2 class="title">Join with our <span>future</span> of Webzo currency</h2>
@@ -209,33 +209,33 @@
                                     <li>
                                         <a href="#!">
                                             <div class="shape">
-                                                <img src="assets/img/icon/icons_bg.svg" alt="shape">
+                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
                                             </div>
-                                            <img src="assets/img/icon/facebook.svg" alt="icon" class="icon">
+                                            <img src="{{ asset('assets/img/icon/facebook.svg') }}" alt="icon" class="icon">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#!">
                                             <div class="shape">
-                                                <img src="assets/img/icon/icons_bg.svg" alt="shape">
+                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
                                             </div>
-                                            <img src="assets/img/icon/twitter.svg" alt="icon" class="icon">
+                                            <img src="{{ asset('assets/img/icon/twitter.svg') }}" alt="icon" class="icon">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#!">
                                             <div class="shape">
-                                                <img src="assets/img/icon/icons_bg.svg" alt="shape">
+                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
                                             </div>
-                                            <img src="assets/img/icon/telegram.svg" alt="icon" class="icon">
+                                            <img src="{{ asset('assets/img/icon/telegram.svg') }}" alt="icon" class="icon">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#!">
                                             <div class="shape">
-                                                <img src="assets/img/icon/icons_bg.svg" alt="shape">
+                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
                                             </div>
-                                            <img src="assets/img/icon/discord.svg" alt="icon" class="icon">
+                                            <img src="{{ asset('assets/img/icon/discord.svg') }}" alt="icon" class="icon">
                                         </a>
                                     </li>
                                 </ul>
@@ -251,8 +251,8 @@
             </div>
         </div>
         <div class="footer__shape">
-            <img src="assets/img/images/footer_shape01.png" alt="shape" class="alltuchtopdown">
-            <img src="assets/img/images/footer_shape02.png" alt="shape" class="alltuchtopdown">
+            <img src="{{ asset('assets/img/images/footer_shape01.png') }}" alt="shape" class="alltuchtopdown">
+            <img src="{{ asset('assets/img/images/footer_shape02.png') }}" alt="shape" class="alltuchtopdown">
         </div>
     </footer>
     <!-- footer-area-end -->
@@ -262,16 +262,16 @@
 
 
     <!-- JS here -->
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/jquery.marquee.min.js"></script>
-    <script src="assets/js/ajax-form.js"></script>
-    <script src="assets/js/jquery.countdown.min.js"></script>
-    <script src="assets/js/jquery.easing.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.marquee.min.js') }}"></script>
+    <script src="{{ asset('assets/js/ajax-form.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.easing.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+    <script src="{{ asset('assets/js/aos.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 
 </html>
