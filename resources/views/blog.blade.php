@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Webze - Blockchain & ICO HTML Template</title>
-    <meta name="description" content="Webze - Blockchain & ICO HTML Template">
+    <title>Cari Uang</title>
+    <meta name="description" content="Cari Uang">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
@@ -45,18 +45,18 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{{ asset('assets/img/logo/logo.svg') }}" alt="Logo"></a>
+                                    <a href="index.html"><img style="height: 100px; width: 80px;" src="{{ asset('assets/img/logo/IMG_1918.png') }}" alt="Logo Cari Uang"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li><a href="index.html#home">Home</a></li>
+                                        <li><a href="{{ route('home') }}">Home</a></li>
                                         <li><a href="index.html#features">features</a></li>
                                         <li><a href="index.html#token">token</a></li>
                                         <li><a href="index.html#work">how it works</a></li>
                                         <li><a href="index.html#roadmap">roadmap</a></li>
-                                        <li class="active menu-item-has-children"><a href="blog.html">blog</a>
+                                        <li class="menu-item-has-children"><a href="{{ route('blog')}}">blog</a>
                                             <ul class="sub-menu">
-                                                <li class="active"><a href="blog.html">Our Blog</a></li>
+                                                <li><a href="{{ route('blog')}}">Our Blog</a></li>
                                                 <li><a href="blog-details.html">Blog Details</a></li>
                                             </ul>
                                         </li>

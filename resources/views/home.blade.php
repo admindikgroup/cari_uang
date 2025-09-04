@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Webze - ICO & Crypto Landing Page Template</title>
-    <meta name="description" content="Webze -  ICO & Crypto Landing Page Template">
+    <title>Cari Uang</title>
+    <meta name="description" content="Cari Uang">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/logo/IMG_1918.png') }}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -45,7 +45,7 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{{ asset('assets/img/logo/logo.svg') }}" alt="Logo"></a>
+                                    <a href="index.html"><img style="height: 100px; width: 80px;" src="{{ asset('assets/img/logo/IMG_1918.png') }}" alt="Logo Cari Uang"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
@@ -54,9 +54,9 @@
                                         <li><a href="#token" class="section-link">token</a></li>
                                         <li><a href="#work" class="section-link">how it works</a></li>
                                         <li><a href="#roadmap" class="section-link">roadmap</a></li>
-                                        <li class="menu-item-has-children"><a href="blog.html">blog</a>
+                                        <li class="menu-item-has-children"><a href="{{ route('blog')}}">blog</a>
                                             <ul class="sub-menu">
-                                                <li><a href="blog.html">Our Blog</a></li>
+                                                <li><a href="{{ route('blog')}}">Our Blog</a></li>
                                                 <li><a href="blog-details.html">Blog Details</a></li>
                                             </ul>
                                         </li>
