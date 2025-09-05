@@ -17,10 +17,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], function () {
-    Route::get('manage-blog-video', [BlogVideoController::class, 'index'])->name('blog-video.index');
-    Route::get('manage-page', [PageController::class, 'index'])->name('page.index');
-    Route::get('manage-blog-article', [BlogArticleController::class, 'index'])->name('blog-article.index');
-    Route::get('broadcast-telegram', [BroadcastTelegramController::class, 'index'])->name('broadcast-telegram.index');
+    Route::resource('blog-video', BlogVideoController::class);
+    Route::resource('blog-article', BlogArticleController::class);
+    Route::resource('manage-page', PageController::class);
+    Route::resource('broadcast-telegram', BroadcastTelegramController::class);
 });
 
 Route::controller(FrontPageController::class)->group(function () {
