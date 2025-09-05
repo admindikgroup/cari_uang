@@ -45,7 +45,7 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo">
-                                    <a href="index.html"><img style="height: 100px; width: 80px;" src="{{ asset('assets/img/logo/IMG_1918.png') }}" alt="Logo Cari Uang"></a>
+                                    <a href="{{ route('home') }}"><img style="height: 100px; width: 80px;" src="{{ asset('assets/img/logo/IMG_1918.png') }}" alt="Logo Cari Uang"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
@@ -57,7 +57,7 @@
                                         <li class="menu-item-has-children"><a href="{{ route('blog')}}">blog</a>
                                             <ul class="sub-menu">
                                                 <li><a href="{{ route('blog')}}">Our Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                                <li><a href="{{ route('blog.detail') }}">Blog Details</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -82,7 +82,7 @@
             <nav class="tgmobile__menu-box">
                 <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
                 <div class="nav-logo">
-                    <a href="index.html"><img src="{{ asset('assets/img/logo/logo.svg') }}" alt="Logo"></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo/logo.svg') }}" alt="Logo"></a>
                 </div>
                 <div class="tgmobile__search">
                     <form action="#">
@@ -745,9 +745,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="footer__content">
-                            <div class="footer__logo">
-                                <a href="index.html"><img src="{{ asset('assets/img/logo/logo.svg') }}" alt="logo"></a>
-                            </div>
+                            
                             <span class="sub-title">Built on web3. Powered by You</span>
                             <h2 class="title">Join with our <span>future</span> of Webzo currency</h2>
                             <div class="team__social-wrap">
@@ -792,7 +790,7 @@
             </div>
             <div class="footer__bottom">
                 <div class="copyright-text">
-                    <p>Copyright & design by <a href="https://themeforest.net/user/themeadapt" target="_blank">@ThemeAdapt</a> - 2025</p>
+                    <p>Copyright & design by <a href="#" target="_blank">Cari Uang</a> - 2025</p>
                 </div>
             </div>
         </div>

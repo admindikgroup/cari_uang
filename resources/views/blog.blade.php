@@ -45,19 +45,19 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo">
-                                    <a href="index.html"><img style="height: 100px; width: 80px;" src="{{ asset('assets/img/logo/IMG_1918.png') }}" alt="Logo Cari Uang"></a>
+                                    <a href="{{ route('home') }}"><img style="height: 100px; width: 80px;" src="{{ asset('assets/img/logo/IMG_1918.png') }}" alt="Logo Cari Uang"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
                                         <li><a href="{{ route('home') }}">Home</a></li>
-                                        <li><a href="index.html#features">features</a></li>
-                                        <li><a href="index.html#token">token</a></li>
-                                        <li><a href="index.html#work">how it works</a></li>
-                                        <li><a href="index.html#roadmap">roadmap</a></li>
+                                        <li><a href="{{ route('home') }}#features">features</a></li>
+                                        <li><a href="{{ route('home') }}#token">token</a></li>
+                                        <li><a href="{{ route('home') }}#work">how it works</a></li>
+                                        <li><a href="{{ route('home') }}#roadmap">roadmap</a></li>
                                         <li class="menu-item-has-children"><a href="{{ route('blog')}}">blog</a>
                                             <ul class="sub-menu">
                                                 <li><a href="{{ route('blog')}}">Our Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                                <li><a href="{{ route('blog.detail') }}">Blog Details</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -82,7 +82,7 @@
             <nav class="tgmobile__menu-box">
                 <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
                 <div class="nav-logo">
-                    <a href="index.html"><img src="{{ asset('assets/img/logo/logo.svg') }}" alt="Logo"></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo/logo.svg') }}" alt="Logo"></a>
                 </div>
                 <div class="tgmobile__search">
                     <form action="#">
@@ -140,165 +140,165 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post01.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post01.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Blockchain enhances transparency in food supply chains.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Blockchain enhances transparency in food supply chains.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post02.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post02.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Lagos plans to integrate blockchain in education.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Lagos plans to integrate blockchain in education.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post03.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post03.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Bangladesh should embrace blockchain, says official.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Bangladesh should embrace blockchain, says official.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post04.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post04.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Cryptoverse: Blockchain bridges encounter challenges ahead.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Cryptoverse: Blockchain bridges encounter challenges ahead.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post05.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post05.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Fifteen Indian banks adopt blockchain trade finance.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Fifteen Indian banks adopt blockchain trade finance.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post06.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post06.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Blockchain summit in Bangladesh scheduled tomorrow.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Blockchain summit in Bangladesh scheduled tomorrow.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post07.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post07.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Bangladesh hosts three-day Blockchain Olympiad event.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Bangladesh hosts three-day Blockchain Olympiad event.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post08.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post08.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Rethinking blockchain for business amid GenAI era.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Rethinking blockchain for business amid GenAI era.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post09.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post09.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Digital Bangladesh introduces blockchain, emerging technologies.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Digital Bangladesh introduces blockchain, emerging technologies.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post10.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post10.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Blockchain seminar held at AIUB university.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Blockchain seminar held at AIUB university.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post11.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post11.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Blockchain combats fake drugs in Nigeria's markets.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Blockchain combats fake drugs in Nigeria's markets.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post12.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post12.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Thriving Skills to host first blockchain summit.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Thriving Skills to host first blockchain summit.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post13.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post13.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Enhancing tax transparency with blockchain technology.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Enhancing tax transparency with blockchain technology.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post14.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post14.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Blockchain's potential extends beyond Bitcoin applications.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Blockchain's potential extends beyond Bitcoin applications.</a></h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post15.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail') }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post15.jpg') }}" alt="img"></a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">January 31, 2025</span>
-                                <h2 class="title"><a href="blog-details.html">Bangladesh, India conduct first blockchain-enabled trade.</a></h2>
+                                <h2 class="title"><a href="{{ route('blog.detail') }}">Bangladesh, India conduct first blockchain-enabled trade.</a></h2>
                             </div>
                         </div>
                     </div>
@@ -320,9 +320,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="footer__content">
-                            <div class="footer__logo">
-                                <a href="index.html"><img src="{{ asset('assets/img/logo/logo.svg') }}" alt="logo"></a>
-                            </div>
+                            
                             <span class="sub-title">Built on web3. Powered by You</span>
                             <h2 class="title">Join with our <span>future</span> of Webzo currency</h2>
                             <div class="team__social-wrap">
@@ -367,7 +365,7 @@
             </div>
             <div class="footer__bottom">
                 <div class="copyright-text">
-                    <p>Copyright & design by <a href="https://themeforest.net/user/themeadapt" target="_blank">@ThemeAdapt</a> - 2025</p>
+                    <p>Copyright & design by <a href="#" target="_blank">Cari Uang</a> - 2025</p>
                 </div>
             </div>
         </div>

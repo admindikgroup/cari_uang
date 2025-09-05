@@ -14,7 +14,7 @@ class PageController extends Controller
     public function index()
     {
         $pageMasters = PageMaster::all();
-        return view('admin.page.index', compact('pageMasters'));
+        return view('admin.manage-page.index', compact('pageMasters'));
     }
 
     /**
@@ -22,7 +22,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view('admin.page.create');
+        return view('admin.manage-page.create');
     }
 
     /**
@@ -37,7 +37,7 @@ class PageController extends Controller
 
         PageMaster::create($request->all());
 
-        return redirect()->route('admin.page.index')->with('success', 'Page content created successfully.');
+        return redirect()->route('admin.manage-page.index')->with('success', 'Page content created successfully.');
     }
 
     /**
@@ -45,7 +45,7 @@ class PageController extends Controller
      */
     public function show(PageMaster $pageMaster)
     {
-        return view('admin.page.show', compact('pageMaster'));
+        return view('admin.manage-page.show', compact('pageMaster'));
     }
 
     /**
@@ -53,7 +53,7 @@ class PageController extends Controller
      */
     public function edit(PageMaster $pageMaster)
     {
-        return view('admin.page.edit', compact('pageMaster'));
+        return view('admin.manage-page.edit', compact('pageMaster'));
     }
 
     /**

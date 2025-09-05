@@ -25,19 +25,19 @@
                         </a>
                     </div>
                     <nav class="mt-5">
-                        <a href="{{ route('admin.blog-video.index') }}" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-amber-200 {{ request()->routeIs('admin.blog-video.index') ? 'bg-amber-200' : '' }}" :class="{'justify-center': !sidebarOpen}">
+                        <a href="{{ route('admin.blog-video.index') }}" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-amber-200 {{ request()->routeIs('admin.blog-video.*') ? 'bg-amber-200' : '' }}" :class="{'justify-center': !sidebarOpen}">
                             <img src="{{ asset('assets/img/icon/crypto_icon01.svg') }}" class="h-6 w-6" alt="Blog Video">
                             <span x-show="sidebarOpen" class="ml-2 transition-opacity duration-300">Manage Blog Video</span>
                         </a>
-                        <a href="{{ route('admin.page.index') }}" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-amber-200 {{ request()->routeIs('admin.page.index') ? 'bg-amber-200' : '' }}" :class="{'justify-center': !sidebarOpen}">
+                        <a href="{{ route('admin.manage-page.index') }}" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-amber-200 {{ request()->routeIs('admin.manage-page.*') ? 'bg-amber-200' : '' }}" :class="{'justify-center': !sidebarOpen}">
                             <img src="{{ asset('assets/img/icon/crypto_icon02.svg') }}" class="h-6 w-6" alt="Page">
                             <span x-show="sidebarOpen" class="ml-2 transition-opacity duration-300">Manage Page</span>
                         </a>
-                        <a href="{{ route('admin.blog-article.index') }}" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-amber-200 {{ request()->routeIs('admin.blog-article.index') ? 'bg-amber-200' : '' }}" :class="{'justify-center': !sidebarOpen}">
+                        <a href="{{ route('admin.blog-article.index') }}" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-amber-200 {{ request()->routeIs('admin.blog-article.*') ? 'bg-amber-200' : '' }}" :class="{'justify-center': !sidebarOpen}">
                             <img src="{{ asset('assets/img/icon/crypto_icon03.svg') }}" class="h-6 w-6" alt="Blog Article">
                             <span x-show="sidebarOpen" class="ml-2 transition-opacity duration-300">Manage Blog Article</span>
                         </a>
-                        <a href="{{ route('admin.broadcast-telegram.index') }}" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-amber-200 {{ request()->routeIs('admin.broadcast-telegram.index') ? 'bg-amber-200' : '' }}" :class="{'justify-center': !sidebarOpen}">
+                        <a href="{{ route('admin.broadcast-telegram.index') }}" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-amber-200 {{ request()->routeIs('admin.broadcast-telegram.*') ? 'bg-amber-200' : '' }}" :class="{'justify-center': !sidebarOpen}">
                             <img src="{{ asset('assets/img/icon/telegram.svg') }}" class="h-6 w-6" alt="Broadcast Telegram">
                             <span x-show="sidebarOpen" class="ml-2 transition-opacity duration-300">Broadcast Telegram</span>
                         </a>
@@ -64,5 +64,6 @@
                 </div>
             </div>
         </div>
+    @stack('scripts')
     </body>
 </html>
