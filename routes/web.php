@@ -25,7 +25,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
 
 Route::controller(FrontPageController::class)->group(function () {
     Route::get('/blog', [FrontPageController::class, 'blog'])->name('blog');
-    Route::get('/blog/details', [FrontPageController::class, 'detail'])->name('blog.detail');
+    Route::get('/blog/{blog_article}', [FrontPageController::class, 'detail'])->name('blog.detail');
 });
 
 Route::middleware('auth')->group(function () {

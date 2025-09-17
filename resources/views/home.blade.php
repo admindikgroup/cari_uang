@@ -62,13 +62,6 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="tgmenu__action">
-                                    <ul class="list-wrap">
-                                        <li class="header-btn">
-                                            <a href="#!" class="tg-btn">buy now</a>
-                                        </li>
-                                    </ul>
-                                </div>
                                 <div class="mobile-nav-toggler"><i class="tg-flaticon-menu-1"></i></div>
                             </nav>
                         </div>

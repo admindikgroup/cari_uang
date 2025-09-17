@@ -14,7 +14,7 @@ class BlogArticleController extends Controller
      */
     public function index()
     {
-        $blogKontens = BlogKonten::all();
+        $blogKontens = BlogKonten::paginate(25);
         return view('admin.blog-article.index', compact('blogKontens'));
     }
 
@@ -46,24 +46,24 @@ class BlogArticleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(BlogKonten $blogKonten)
+    public function show(BlogKonten $blog_article)
     {
-        return view('admin.blog-article.show', compact('blogKonten'));
+        return view('admin.blog-article.show', compact('blog_article'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(BlogKonten $blogKonten)
+    public function edit(BlogKonten $blog_article)
     {
         $kategoris = Kategori::all();
-        return view('admin.blog-article.edit', compact('blogKonten', 'kategoris'));
+        return view('admin.blog-article.edit', compact('blog_article', 'kategoris'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, BlogKonten $blogKonten)
+    public function update(Request $request, BlogKonten $blog_article)
     {
         $request->validate([
             'title' => 'required|string|max:255',
@@ -71,7 +71,7 @@ class BlogArticleController extends Controller
             'konten' => 'required|string',
         ]);
 
-        $blogKonten->update($request->all());
+        $blog_article->update($request->all());
 
         return redirect()->route('admin.blog-article.index')->with('success', 'Blog content updated successfully.');
     }
@@ -79,9 +79,9 @@ class BlogArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(BlogKonten $blogKonten)
+    public function destroy(BlogKonten $blog_article)
     {
-        $blogKonten->delete();
+        $blog_article->delete();
         return redirect()->route('admin.blog-article.index')->with('success', 'Blog content deleted successfully.');
     }
 }

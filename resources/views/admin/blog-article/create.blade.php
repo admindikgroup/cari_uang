@@ -38,7 +38,7 @@
                         </div>
                         <div class="mb-4">
                             <label for="konten" class="block text-gray-700 text-sm font-bold mb-2">Content:</label>
-                            <textarea name="konten" id="konten" rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>{{ old('konten') }}</textarea>
+                            <textarea name="konten" id="konten" rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ old('konten') }}</textarea>
                         </div>
                         <div class="flex items-center justify-between">
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
@@ -55,12 +55,13 @@
     </div>
 
     @push('scripts')
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/eekfvdcqyuca9jwq0g71dwctqxq15vbjhwmmirvgqq2utq3p/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
     <script>
         tinymce.init({
             selector: 'textarea#konten',
             plugins: 'code table lists',
-            toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
+            toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table',
+            uploadcare_public_key: 'eekfvdcqyuca9jwq0g71dwctqxq15vbjhwmmirvgqq2utq3p'
         });
     </script>
     @endpush
