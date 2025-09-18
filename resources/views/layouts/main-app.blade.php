@@ -39,15 +39,15 @@
                                     </div>
                                     <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                         <ul class="navigation">
-                                            <li><a href="#home" class="section-link">Home</a></li>
-                                            <li><a href="#features" class="section-link">features</a></li>
-                                            <li><a href="#token" class="section-link">token</a></li>
-                                            <li><a href="#work" class="section-link">how it works</a></li>
-                                            <li><a href="#roadmap" class="section-link">roadmap</a></li>
+                                            <li><a href="{{ route('home') }}">Home</a></li>
+                                            <li><a href="{{ route('home') }}#features">features</a></li>
+                                            <li><a href="{{ route('home') }}#token">token</a></li>
+                                            <li><a href="{{ route('home') }}#work">how it works</a></li>
+                                            <li><a href="{{ route('home') }}#roadmap">roadmap</a></li>
                                             <li class="menu-item-has-children"><a href="{{ route('blog')}}">blog</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="{{ route('blog')}}">Our Blog</a></li>
-                                                    <li><a href="{{ route('blog.detail') }}">Blog Details</a></li>
+                                                    <li><a href="{{ route('blog-video')}}">Video Blog</a></li>
                                                 </ul>
                                             </li>
                                         </ul>

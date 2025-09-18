@@ -26,6 +26,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
 Route::controller(FrontPageController::class)->group(function () {
     Route::get('/blog', [FrontPageController::class, 'blog'])->name('blog');
     Route::get('/blog/{blog_article}', [FrontPageController::class, 'detail'])->name('blog.detail');
+    Route::get('/blog-video', [FrontPageController::class, 'blogVideo'])->name('blog-video');
+    Route::get('/blog-video/{blog_video}', [FrontPageController::class, 'blogVideodetail'])->name('blog-video.detail');
 });
 
 Route::middleware('auth')->group(function () {

@@ -121,23 +121,16 @@
                 <div class="blog__details-wrap">
                     <div class="blog__details-thumb-wrap">
                         <div class="row gutter-40">
-                            <div class="col-md-6">
-                                <div class="blog__details-thumb">
-                                    <img src="{{ asset('assets/img/blog/blog_details_img01.jpg') }}" alt="img">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="blog__details-thumb">
-                                    <img src="{{ asset('assets/img/blog/blog_details_img02.jpg') }}" alt="img">
+                            <div class="col-md-12">
+                                <div class="blog__details-thumb" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                    <iframe src="{{ str_replace('watch?v=', 'embed/', $video->video_url) }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen title="YouTube video player"></iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="blog__details-content">
-                        <span class="date">{{ $article->created_at->format('F d, Y') }}</span>
-                        <h2 class="title">{{ $article->title }}</h2>
-                        <span class="date">TAG: {{ $article->kategori->nama_kategori }}</span>
-                        {!! $article->konten !!}
+                        <h2 class="title">{{ $video->title }}</h2>
+                        {!! $video->alt_text !!}
                     </div>
                 </div>
             </div>

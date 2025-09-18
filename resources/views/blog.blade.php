@@ -57,6 +57,7 @@
                                         <li class="menu-item-has-children"><a href="{{ route('blog')}}">blog</a>
                                             <ul class="sub-menu">
                                                 <li><a href="{{ route('blog')}}">Our Blog</a></li>
+                                                <li><a href="{{ route('blog-video')}}">Video Blog</a></li>
                                             </ul>
                                         </li>
                                     </ul>

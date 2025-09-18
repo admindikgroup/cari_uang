@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\BlogKonten;
+use App\Models\BlogVideo;
+
 
 class FrontPageController extends Controller
 {
@@ -17,5 +19,16 @@ class FrontPageController extends Controller
     public function detail(BlogKonten $blog_article): View
     {
         return view('blog-details', ['article' => $blog_article]);
+    }
+
+    public function blogVideo(): View
+    {
+        $blog_video = BlogVideo::latest()->paginate(15);
+        return view('blog-video', ['blog_video' => $blog_video]);
+    }
+
+    public function blogVideodetail(BlogVideo $blog_video): View
+    {
+        return view('blog-video-details', ['video' => $blog_video]);
     }
 }

@@ -115,34 +115,47 @@
     <!-- main-area -->
     <main class="main-area fix">
 
-        <!-- blog-details-area -->
-        <section class="blog__details-area section-py-120">
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb__area breadcrumb__bg" data-background="{{ asset('assets/img/banner/breadcrumb_bg.svg') }}">
             <div class="container">
-                <div class="blog__details-wrap">
-                    <div class="blog__details-thumb-wrap">
-                        <div class="row gutter-40">
-                            <div class="col-md-6">
-                                <div class="blog__details-thumb">
-                                    <img src="{{ asset('assets/img/blog/blog_details_img01.jpg') }}" alt="img">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="blog__details-thumb">
-                                    <img src="{{ asset('assets/img/blog/blog_details_img02.jpg') }}" alt="img">
-                                </div>
-                            </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner__content breadcrumb__content">
+                            <h2 class="title">Video Blog</h2>
                         </div>
-                    </div>
-                    <div class="blog__details-content">
-                        <span class="date">{{ $article->created_at->format('F d, Y') }}</span>
-                        <h2 class="title">{{ $article->title }}</h2>
-                        <span class="date">TAG: {{ $article->kategori->nama_kategori }}</span>
-                        {!! $article->konten !!}
                     </div>
                 </div>
             </div>
+            <div class="breadcrumb__shape">
+                <img src="{{ asset('assets/img/images/features_shape.png') }}" alt="">
+            </div>
         </section>
-        <!-- blog-details-area-end -->
+        <!-- breadcrumb-area-end -->
+
+        <!-- blog-post-area -->
+        <section class="blog__post-area section-py-120">
+            <div class="container">
+                <div class="row justify-content-center gutter-50">
+                    @foreach ($blog_video as $article)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog__post-item shine__animate-item">
+                            <div class="blog__post-thumb">
+                                <a href="{{ route('blog-video.detail', $article) }}" class="shine__animate-link"><img src="{{ $article->thumbnail_url }}" alt="img"></a>
+                            </div>
+                            <div class="blog__post-content">
+                                <span class="date">{{ $article->created_at->format('F d, Y') }}</span>
+                                <h2 class="title"><a href="{{ route('blog-video.detail', $article) }}">{{ $article->title }}</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="load-more-btn text-center">
+                    {{ $blog_video->links() }}
+                </div>
+            </div>
+        </section>
+        <!-- blog-post-area-end -->
 
     </main>
     <!-- main-area-end -->
@@ -150,14 +163,68 @@
     <!-- footer-area -->
     <footer class="footer__area footer__area-two">
         <div class="container">
+            <div class="footer__top">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="footer__content">
+                            
+                            <span class="sub-title">Built on web3. Powered by You</span>
+                            <h2 class="title">Join with our <span>future</span> of Webzo currency</h2>
+                            <div class="team__social-wrap">
+                                <ul class="list-wrap">
+                                    <li>
+                                        <a href="#!">
+                                            <div class="shape">
+                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
+                                            </div>
+                                            <img src="{{ asset('assets/img/icon/facebook.svg') }}" alt="icon" class="icon">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!">
+                                            <div class="shape">
+                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
+                                            </div>
+                                            <img src="{{ asset('assets/img/icon/twitter.svg') }}" alt="icon" class="icon">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!">
+                                            <div class="shape">
+                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
+                                            </div>
+                                            <img src="{{ asset('assets/img/icon/telegram.svg') }}" alt="icon" class="icon">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!">
+                                            <div class="shape">
+                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
+                                            </div>
+                                            <img src="{{ asset('assets/img/icon/discord.svg') }}" alt="icon" class="icon">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="footer__bottom">
                 <div class="copyright-text">
                     <p>Copyright & design by <a href="#" target="_blank">Cari Uang</a> - 2025</p>
                 </div>
             </div>
         </div>
+        <div class="footer__shape">
+            <img src="{{ asset('assets/img/images/footer_shape01.png') }}" alt="shape" class="alltuchtopdown">
+            <img src="{{ asset('assets/img/images/footer_shape02.png') }}" alt="shape" class="alltuchtopdown">
+        </div>
     </footer>
     <!-- footer-area-end -->
+
+
+
 
 
     <!-- JS here -->
