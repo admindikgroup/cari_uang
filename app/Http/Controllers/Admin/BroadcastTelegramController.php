@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BroadcastTelegram;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Telegram\Bot\Api;
 
 class BroadcastTelegramController extends Controller
 {
@@ -30,6 +31,14 @@ class BroadcastTelegramController extends Controller
         $message = new BroadcastTelegram($request->all());
         $message->created_by = Auth::id();
         $message->save();
+
+        $telegram = new Api(env('TELEGRAM_BOT_TOKEN'));
+        $chatId = env('TELEGRAM_CHAT_ID');
+
+        $reponse = $telegram->sendMessage([
+            'chat_id' => $chatId,
+            'text' => $request->konten_broadcast,
+        ]);
 
         return redirect()->route('admin.broadcast-telegram.index')->with('success', 'Broadcast message created successfully.');
     }

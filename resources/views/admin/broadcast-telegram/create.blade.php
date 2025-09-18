@@ -17,7 +17,7 @@
                         </div>
                         <div class="mb-4">
                             <label for="konten_broadcast" class="block text-gray-700 text-sm font-bold mb-2">Content:</label>
-                            <textarea name="konten_broadcast" id="konten_broadcast" rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                            <textarea name="konten_broadcast" id="konten_broadcast" rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"></textarea>
                         </div>
                         <div class="flex items-center justify-between">
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
@@ -34,7 +34,7 @@
     </div>
 
     @push('scripts')
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/eekfvdcqyuca9jwq0g71dwctqxq15vbjhwmmirvgqq2utq3p/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
     <script>
         tinymce.init({
             selector: 'textarea#konten_broadcast',
