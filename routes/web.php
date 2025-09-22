@@ -12,6 +12,8 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -28,6 +30,8 @@ Route::controller(FrontPageController::class)->group(function () {
     Route::get('/blog/{blog_article}', [FrontPageController::class, 'detail'])->name('blog.detail');
     Route::get('/blog-video', [FrontPageController::class, 'blogVideo'])->name('blog-video');
     Route::get('/blog-video/{blog_video}', [FrontPageController::class, 'blogVideodetail'])->name('blog-video.detail');
+    Route::get('/contact-us', [FrontPageController::class, 'contact'])->name('contact-us');
+    Route::post('/contact-us', [FrontPageController::class, 'contactSubmit'])->name('contact.submit');
 });
 
 Route::middleware('auth')->group(function () {

@@ -55,7 +55,7 @@
                                     <div class="tgmenu__action">
                                         <ul class="list-wrap">
                                             <li class="header-btn">
-                                                <a href="#!" class="tg-btn">buy now</a>
+                                                <a href="#!" class="tg-btn">Gabung Sekarang</a>
                                             </li>
                                         </ul>
                                     </div>

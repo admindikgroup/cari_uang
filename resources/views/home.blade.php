@@ -50,10 +50,11 @@
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                         <ul class="navigation">
                                             <li><a href="{{ route('home') }}">Home</a></li>
-                                            <li><a href="{{ route('home') }}#features">features</a></li>
+                                            <li><a href="{{ route('home') }}#direction">Direction</a></li>
                                             <!-- <li><a href="{{ route('home') }}#token">token</a></li> -->
-                                            <li><a href="{{ route('home') }}#work">how it works</a></li>
+                                            <li><a href="{{ route('home') }}#faq">FAQ</a></li>
                                             <li><a href="{{ route('home') }}#roadmap">roadmap</a></li>
+                                            <li><a href="{{ route('contact-us') }}">Kontak</a></li>
                                             <li class="menu-item-has-children"><a href="{{ route('blog')}}">blog</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="{{ route('blog')}}">Our Blog</a></li>
@@ -61,6 +62,13 @@
                                                 </ul>
                                             </li>
                                         </ul>
+                                </div>
+                                <div class="tgmenu__action">
+                                    <ul class="list-wrap">
+                                        <li class="header-btn">
+                                            <a href="#!" class="tg-btn">Gabung Sekarang</a>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div class="mobile-nav-toggler"><i class="tg-flaticon-menu-1"></i></div>
                             </nav>
@@ -127,280 +135,11 @@
                     </div>
                 </div>
             </div>
-            <div class="banner__shape">
-                <img src="{{ asset('assets/img/banner/hero_img01.png') }}" alt="shape" class="alltuchtopdown">
-                <img src="{{ asset('assets/img/banner/hero_img02.png') }}" alt="shape" class="rotateme">
-                <img src="{{ asset('assets/img/banner/hero_img03.png') }}" alt="shape" class="alltuchtopdown">
-                <img src="{{ asset('assets/img/banner/hero_bg_shape.svg') }}" alt="shape" class="banner__bg-shape">
-            </div>
         </section>
         <!-- banner-area-end -->
 
-        <!-- brand-area -->
-        <div class="brand__area">
-            <div class="container">
-                <div class="brand__item-wrap">
-                    <div class="swiper-container fix brand-active">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="brand__item">
-                                    <img src="{{ asset('assets/img/brand/brand_01.svg') }}" alt="logo">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand__item">
-                                    <img src="{{ asset('assets/img/brand/brand_02.svg') }}" alt="logo">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand__item">
-                                    <img src="{{ asset('assets/img/brand/brand_03.svg') }}" alt="logo">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand__item">
-                                    <img src="{{ asset('assets/img/brand/brand_04.svg') }}" alt="logo">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand__item">
-                                    <img src="{{ asset('assets/img/brand/brand_05.svg') }}" alt="logo">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand__item">
-                                    <img src="{{ asset('assets/img/brand/brand_06.svg') }}" alt="logo">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand__item">
-                                    <img src="{{ asset('assets/img/brand/brand_04.svg') }}" alt="logo">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- brand-area-end -->
-
-        <!-- features-area -->
-        <section id="features" class="features__area section-pt-120">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="section__title text-center mb-80">
-                            <span class="sub-title">accessible for everyone</span>
-                            <h2 class="title">Crypto <span>development</span> accessible</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row gutter-y-40">
-                    <div class="col-lg-6">
-                        <div class="features__item">
-                            <div class="features__icon">
-                                <img src="{{ asset('assets/img/icon/features_icon01.png') }}" alt="icon">
-                            </div>
-                            <div class="features__content">
-                                <h4 class="title">Crypto <span>management</span></h4>
-                                <p>Automated identity verification and anti-money</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="features__item">
-                            <div class="features__icon">
-                                <img src="{{ asset('assets/img/icon/features_icon02.png') }}" alt="icon">
-                            </div>
-                            <div class="features__content">
-                                <h4 class="title">Crypto <span>exchange</span></h4>
-                                <p>A built-in explorer to track transactions</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features__item features__item-two">
-                            <div class="features__icon">
-                                <img src="{{ asset('assets/img/icon/features_icon03.png') }}" alt="icon">
-                            </div>
-                            <div class="features__content">
-                                <h4 class="title">Real-time <span>data</span></h4>
-                                <p>Global reach with content available in multiple</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features__item features__item-two">
-                            <div class="features__icon">
-                                <img src="{{ asset('assets/img/icon/features_icon04.png') }}" alt="icon">
-                            </div>
-                            <div class="features__content">
-                                <h4 class="title">Advanced <span>trading</span></h4>
-                                <p>Visual dashboards for trade performance</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features__item features__item-two">
-                            <div class="features__icon">
-                                <img src="{{ asset('assets/img/icon/features_icon05.png') }}" alt="icon">
-                            </div>
-                            <div class="features__content">
-                                <h4 class="title">Blockchain <span>compliance</span></h4>
-                                <p>Exportable reports for tax and accounting purposes</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="features__shape">
-                <img src="{{ asset('assets/img/images/features_shape.png') }}" alt="shape">
-            </div>
-        </section>
-        <!-- features-area-end -->
-
-        <!-- marquee-area -->
-        <section class="marquee__area section-pt-120">
-            <div class="slider__marquee clearfix marquee-wrap">
-                <div class="marquee_mode marquee__group">
-                    <h6 class="marquee__item">You will hold the way you love Webzo</h6>
-                    <h6 class="marquee__item">You will hold the way you love Webzo</h6>
-                </div>
-            </div>
-        </section>
-        <!-- marquee-area-end -->
-
-        <!-- token-area -->
-        <!-- <section id="token" class="token__area section-py-120">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="token__content" data-aos="fade-right" data-aos-delay="0">
-                            <div class="section__title mb-40">
-                                <span class="sub-title">accessible for everyone</span>
-                                <h2 class="title">Trading <span>platform</span> <br> of the future!</h2>
-                            </div>
-                            <p>Webzi brings our love for cryptocurrency into Web3! Like a frog’s leap, the chart can jump at any moment. Boom!</p>
-                            <a href="#!" class="tg-btn tg-btn-two">purchase now</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="token__wrap" data-aos="fade-left" data-aos-delay="0">
-                            <div class="token__wrap-inner">
-                                <h4 class="title">Token sale ends in:</h4>
-                                <div class="countdown__wrap">
-                                    <div class="coming-time" data-countdown="2026/12/30"></div>
-                                </div>
-                                <h3 class="token__received"><span>$49,222,300</span> contribution received</h3>
-                                <div class="token__progress-wrap">
-                                    <ul class="list-wrap token__progress-title">
-                                        <li>$5M</li>
-                                        <li>$99M</li>
-                                    </ul>
-                                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: 50%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="copy-text">
-                                <mark>0x2170Ed0880ac9A755fd29B2688956BD959F933F8</mark>
-                                <button class="copy-btn"><img src="{{ asset('assets/img/icon/copy.svg') }}" alt=""></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="token__shape">
-                <img src="{{ asset('assets/img/images/features_shape.png') }}" alt="">
-            </div>
-        </section> -->
-        <!-- token-area-end -->
-
-        <!-- section-divider -->
-        <div class="section-divider">
-            <div class="container">
-                <span></span>
-            </div>
-        </div>
-        <!-- section-divider-end -->
-
-        <!-- work-area -->
-        <section id="work" class="work__area section-py-120">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="section__title text-center mb-80">
-                            <span class="sub-title">how it works?</span>
-                            <h2 class="title">Core asset of the <span>crypto</span> marketplace</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="work__item-wrap">
-                    <div class="work__img">
-                        <img src="{{ asset('assets/img/images/work_img.png') }}" alt="img" class="alltuchtopdown">
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="0">
-                            <div class="work__item">
-                                <h1 class="number">01</h1>
-                                <h4 class="title">Currency <span>conversion</span></h4>
-                                <p>Exportable reports for tax and accounting purposes.</p>
-                            </div>
-                            <div class="work__item mb-0">
-                                <h1 class="number">02</h1>
-                                <h4 class="title">Data <span>encryption</span></h4>
-                                <p>Visual dashboards for trade performance.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="0">
-                            <div class="work__item work__item-right">
-                                <h1 class="number">03</h1>
-                                <h4 class="title">Cold wallet <span>storage</span></h4>
-                                <p>Regular updates on crypto trends and platform features.</p>
-                            </div>
-                            <div class="work__item work__item-right mb-0">
-                                <h1 class="number">04</h1>
-                                <h4 class="title">Transfer crypto <span>& data</span></h4>
-                                <p>Guides for beginners on crypto basics and trading.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="work__shape">
-                <img src="{{ asset('assets/img/images/features_shape.png') }}" alt="shape">
-            </div>
-        </section>
-        <!-- work-area-end -->
-
-        <!-- exchange-area -->
-        <section class="exchange__area section-pb-120" data-aos="fade-up" data-aos-delay="0">
-            <div class="container">
-                <div class="exchange__inner-wrap">
-                    <div class="exchange__content">
-                        <div class="icon">
-                            <img src="{{ asset('assets/img/images/exchange_img.png') }}" alt="img">
-                        </div>
-                        <div class="content">
-                            <h4 class="title">Exchange <span>availability</span></h4>
-                            <p>AI-powered tools to detect and prevent fraudulent activities.</p>
-                        </div>
-                    </div>
-                    <div class="exchange__icons">
-                        <ul class="list-wrap">
-                            <li><img src="{{ asset('assets/img/icon/exchange_icon01.svg') }}" alt="icon"></li>
-                            <li><img src="{{ asset('assets/img/icon/exchange_icon02.svg') }}" alt="icon"></li>
-                            <li><img src="{{ asset('assets/img/icon/exchange_icon03.svg') }}" alt="icon"></li>
-                            <li><img src="{{ asset('assets/img/icon/exchange_icon04.svg') }}" alt="icon"></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- exchange-area-end -->
-
         <!-- crypto-area -->
-        <section class="crypto__area section-py-120">
+        <section id="direction" class="crypto__area section-py-120">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-7">
@@ -453,7 +192,7 @@
         <!-- crypto-area-end -->
 
         <!-- faq-area -->
-        <section class="faq__area section-py-120">
+        <section id="faq" class="faq__area section-py-120">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">

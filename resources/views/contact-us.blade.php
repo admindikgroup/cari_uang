@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Cari Uang</title>
+    <title>Contact Us - Cari Uang</title>
     <meta name="description" content="Cari Uang">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/logo/IMG_1918.png') }}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -48,19 +48,20 @@
                                     <a href="{{ route('home') }}"><img style="height: 100px; width: 80px;" src="{{ asset('assets/img/logo/IMG_1918.png') }}" alt="Logo Cari Uang"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
-                                    <ul class="navigation">
-                                        <li><a href="{{ route('home') }}">Home</a></li>
-                                        <li><a href="{{ route('home') }}#features">features</a></li>
-                                        <li><a href="{{ route('home') }}#token">token</a></li>
-                                        <li><a href="{{ route('home') }}#work">how it works</a></li>
-                                        <li><a href="{{ route('home') }}#roadmap">roadmap</a></li>
-                                        <li class="menu-item-has-children"><a href="{{ route('blog')}}">blog</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="{{ route('blog')}}">Our Blog</a></li>
-                                                <li><a href="{{ route('blog-video')}}">Video Blog</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                        <ul class="navigation">
+                                            <li><a href="{{ route('home') }}">Home</a></li>
+                                            <li><a href="{{ route('home') }}#direction">Direction</a></li>
+                                            <!-- <li><a href="{{ route('home') }}#token">token</a></li> -->
+                                            <li><a href="{{ route('home') }}#faq">FAQ</a></li>
+                                            <li><a href="{{ route('home') }}#roadmap">roadmap</a></li>
+                                            <li><a href="{{ route('contact-us') }}">Kontak</a></li>
+                                            <li class="menu-item-has-children"><a href="{{ route('blog')}}">blog</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="{{ route('blog')}}">Our Blog</a></li>
+                                                    <li><a href="{{ route('blog-video')}}">Video Blog</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
                                 </div>
                                 <div class="tgmenu__action">
                                     <ul class="list-wrap">
@@ -116,52 +117,115 @@
     <main class="main-area fix">
 
         <!-- breadcrumb-area -->
-        <section class="breadcrumb__area breadcrumb__bg" data-background="{{ asset('assets/img/banner/breadcrumb_bg.svg') }}">
+        <section class="breadcrumb__area breadcrumb__bg" data-background="{{ asset('assets/img/banner/hero_bg.svg') }}">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="banner__content breadcrumb__content">
-                            <h2 class="title">Video Blog</h2>
+                    <div class="col-12">
+                        <div class="breadcrumb__content">
+                            <h2 class="title">Contact Us</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="breadcrumb__shape">
-                <img src="{{ asset('assets/img/images/features_shape.png') }}" alt="">
             </div>
         </section>
         <!-- breadcrumb-area-end -->
 
-        <!-- blog-post-area -->
-        <section class="blog__post-area section-py-120">
+        <!-- contact-area -->
+        <section class="contact__area section-py-120">
             <div class="container">
-                <div class="row justify-content-center gutter-50">
-                    @foreach ($blog_video as $article)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog__post-item shine__animate-item">
-                            <div class="blog__post-thumb">
-                                <a href="{{ route('blog-video.detail', $article) }}" class="shine__animate-link"><img src="{{ $article->thumbnail_url }}" alt="img"></a>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="contact__form-wrap">
+                            <div class="section__title mb-50">
+                                <span class="sub-title">get in touch</span>
+                                <h2 class="title">Feel free to write us a message.</h2>
                             </div>
-                            <div class="blog__post-content">
-                                <span class="date">{{ $article->created_at->format('F d, Y') }}</span>
-                                <h2 class="title"><a href="{{ route('blog-video.detail', $article) }}">{{ $article->title }}</a></h2>
-                            </div>
+                            @if(session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+                            <form id="contact-form" action="{{ route('contact.submit') }}" method="POST">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-grp">
+                                            <input name="name" class="form-control" type="text" placeholder="Your Name *" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-grp">
+                                            <input name="email" class="form-control" type="email" placeholder="Your Email *" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-grp">
+                                    <input name="subject" class="form-control" type="text" placeholder="Subject">
+                                </div>
+                                <br>
+                                <div class="form-grp">
+                                    <textarea name="message" class="form-control" placeholder="Message *" required></textarea>
+                                </div>
+                                    <br>
+                                <button type="submit" class="tg-btn">send message</button>
+                            </form>
                         </div>
                     </div>
-                    @endforeach
-                </div>
-                <div class="load-more-btn text-center">
-                    {{ $blog_video->links() }}
+                    <div class="col-lg-6">
+                        <div class="contact__info-wrap">
+                            <div class="section__title mb-50">
+                                <span class="sub-title">Contact Info</span>
+                                <h2 class="title">Our contact information</h2>
+                            </div>
+                            <ul class="list-wrap">
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="content">
+                                        <h5 class="title">Address</h5>
+                                        <span>123 Street, New York, USA</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="content">
+                                        <h5 class="title">Email</h5>
+                                        <a href="mailto:info@example.com">info@example.com</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="content">
+                                        <h5 class="title">Phone</h5>
+                                        <span>+123 456 7890</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- blog-post-area-end -->
+        <!-- contact-area-end -->
+
 
     </main>
     <!-- main-area-end -->
 
     <!-- footer-area -->
-    <footer class="footer__area footer__area-two">
+    <footer class="footer__area">
         <div class="container">
             <div class="footer__top">
                 <div class="row justify-content-center">
