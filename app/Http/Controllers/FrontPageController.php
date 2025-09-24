@@ -9,6 +9,8 @@ use App\Models\BlogVideo;
 use App\Models\Faq;
 use App\Models\Roadmap;
 use App\Models\PageMaster;
+use App\Models\Contact;
+use App\Models\Subscriber;
 use Illuminate\Http\RedirectResponse;
 
 class FrontPageController extends Controller
@@ -57,6 +59,26 @@ class FrontPageController extends Controller
 
     public function contactSubmit(Request $request): RedirectResponse
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'subject' => 'nullable|string|max:255',
+            'message' => 'required|string',
+        ]);
+
+        Contact::create($request->all());
+
         return redirect()->route('contact-us')->with('success', 'Your message has been sent successfully!');
+    }
+
+    public function subscribe(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'contact' => 'required|string|max:255',
+        ]);
+
+        Subscriber::create($request->all());
+
+        return redirect()->route('home')->with('success', 'You have been subscribed successfully!');
     }
 }

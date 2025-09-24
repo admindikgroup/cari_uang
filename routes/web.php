@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontPageController::class, 'index'])->name('home');
 
-
+Route::post('/subscribe', [FrontPageController::class, 'subscribe'])->name('subscribe');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
