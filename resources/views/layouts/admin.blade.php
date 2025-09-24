@@ -41,6 +41,10 @@
                             <img src="{{ asset('assets/img/icon/telegram.svg') }}" class="h-6 w-6" alt="Broadcast Telegram">
                             <span x-show="sidebarOpen" class="ml-2 transition-opacity duration-300">Broadcast Telegram</span>
                         </a>
+                        <a href="{{ route('admin.faq.index') }}" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-amber-200 {{ request()->routeIs('admin.faq.*') ? 'bg-amber-200' : '' }}" :class="{'justify-center': !sidebarOpen}">
+                            <img src="{{ asset('assets/img/icon/crypto_icon01.svg') }}" class="h-6 w-6" alt="FAQ">
+                            <span x-show="sidebarOpen" class="ml-2 transition-opacity duration-300">Manage FAQ</span>
+                        </a>
                     </nav>
                 </div>
 

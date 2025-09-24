@@ -51,7 +51,6 @@
                                         <ul class="navigation">
                                             <li><a href="{{ route('home') }}">Home</a></li>
                                             <li><a href="{{ route('home') }}#direction">Direction</a></li>
-                                            <!-- <li><a href="{{ route('home') }}#token">token</a></li> -->
                                             <li><a href="{{ route('home') }}#faq">FAQ</a></li>
                                             <li><a href="{{ route('home') }}#roadmap">roadmap</a></li>
                                             <li><a href="{{ route('contact-us') }}">Kontak</a></li>
@@ -122,9 +121,8 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-8 col-md-10">
                         <div class="banner__content">
-                            <span class="sub-title wow fadeInUp" data-wow-delay=".2s" data-wow-duration="1s">Built on web3. Powered by You</span>
-                            <h2 class="title wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1s">The <span>future</span> of leverage is here</h2>
-                            <p class="wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1s">Leverage on any tokens with a protocol trusted with billions for its performance and reliability.</p>
+                            <h2 class="title wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1s">{!! $banner_title !!}</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1s">{{ $banner_subtitle }}</p>
                             <form action="#" class="banner__form wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1s">
                                 <label for="email"><img src="{{ asset('assets/img/icon/envelope.svg') }}" alt=""></label>
                                 <input type="email" id="email" placeholder="Business email">
@@ -208,42 +206,20 @@
                             </div>
                             <div class="faq__wrap">
                                 <div class="accordion" id="accordionExample">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Main purpose of a cryptocurrency
-                                            </button>
-                                        </h2>
-                                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>The private key, stored securely in the wallet, allows you to sign transactions and prove ownership of the funds cryptocurrency wallet.</p>
+                                    @foreach ($faqs as $faq)
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button @if(!$loop->first) collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $faq->id }}" aria-expanded="{{ $loop->first ? 'true' : 'false' }}" aria-controls="collapse{{ $faq->id }}">
+                                                    {{ $faq->question }}
+                                                </button>
+                                            </h2>
+                                            <div id="collapse{{ $faq->id }}" class="accordion-collapse collapse @if($loop->first) show @endif" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>{{ $faq->answer }}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                How can I make refund?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>The private key, stored securely in the wallet, allows you to sign transactions and prove ownership of the funds cryptocurrency wallet.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                How do they operate on blockchain?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>The private key, stored securely in the wallet, allows you to sign transactions and prove ownership of the funds cryptocurrency wallet.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -274,50 +250,19 @@
                 </div>
                 <div class="roadmap__item-wrap" data-aos="fade-up" data-aos-delay="300">
                     <div class="row gutter-y-40">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="roadmap__item">
-                                <div class="roadmap__icon">
-                                    <img src="{{ asset('assets/img/icon/roadmap_icon01.png') }}" alt="icon">
-                                </div>
-                                <div class="roadmap__content">
-                                    <h3 class="title">2014</h3>
-                                    <p>Definitions of key terms in cryptocurrency</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="roadmap__item">
-                                <div class="roadmap__icon">
-                                    <img src="{{ asset('assets/img/icon/roadmap_icon02.png') }}" alt="icon">
-                                </div>
-                                <div class="roadmap__content">
-                                    <h3 class="title">2017</h3>
-                                    <p>Automated tools for executing strategies</p>
+                        @foreach ($roadmaps as $roadmap)
+                            <div class="col-lg-3 col-md-6">
+                                <div class="roadmap__item">
+                                    <div class="roadmap__icon">
+                                        <img src="{{ asset($roadmap->icon) }}" alt="icon">
+                                    </div>
+                                    <div class="roadmap__content">
+                                        <h3 class="title">{{ $roadmap->year }}</h3>
+                                        <p>{{ $roadmap->description }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="roadmap__item">
-                                <div class="roadmap__icon">
-                                    <img src="{{ asset('assets/img/icon/roadmap_icon03.png') }}" alt="icon">
-                                </div>
-                                <div class="roadmap__content">
-                                    <h3 class="title">2022</h3>
-                                    <p>APIs for developers to build custom tools</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="roadmap__item">
-                                <div class="roadmap__icon">
-                                    <img src="{{ asset('assets/img/icon/roadmap_icon04.png') }}" alt="icon">
-                                </div>
-                                <div class="roadmap__content">
-                                    <h3 class="title">2025</h3>
-                                    <p>A space for users to discuss trends</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

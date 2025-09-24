@@ -6,10 +6,29 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\BlogKonten;
 use App\Models\BlogVideo;
+use App\Models\Faq;
+use App\Models\Roadmap;
+use App\Models\PageMaster;
 use Illuminate\Http\RedirectResponse;
 
 class FrontPageController extends Controller
 {
+    public function index(): View
+    {
+        $faqs = Faq::all();
+        $roadmaps = Roadmap::all();
+        $banner = PageMaster::where('page_kategori', 1)->first();
+        $banner_title = '';
+        $banner_subtitle = '';
+        if ($banner) {
+            $banner_content = json_decode($banner->konten, true);
+            $banner_title = $banner_content['title'] ?? '';
+            $banner_subtitle = $banner_content['subtitle'] ?? '';
+        }
+
+        return view('home', compact('faqs', 'roadmaps', 'banner_title', 'banner_subtitle'));
+    }
+
     public function blog(): View
     {
         $articles = BlogKonten::latest()->paginate(15);

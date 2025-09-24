@@ -32,10 +32,19 @@ class PageController extends Controller
     {
         $request->validate([
             'page_kategori' => 'required|integer',
-            'konten' => 'required|string',
+            'title' => 'required|string',
+            'subtitle' => 'required|string',
         ]);
 
-        PageMaster::create($request->all());
+        $konten = json_encode([
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+        ]);
+
+        PageMaster::create([
+            'page_kategori' => $request->page_kategori,
+            'konten' => $konten,
+        ]);
 
         return redirect()->route('admin.manage-page.index')->with('success', 'Page content created successfully.');
     }
@@ -53,7 +62,11 @@ class PageController extends Controller
      */
     public function edit(PageMaster $pageMaster)
     {
-        return view('admin.manage-page.edit', compact('pageMaster'));
+        $data = json_decode($pageMaster->konten, true);
+        $title = $data['title'] ?? '';
+        $subtitle = $data['subtitle'] ?? '';
+
+        return view('admin.manage-page.edit', compact('pageMaster', 'title', 'subtitle'));
     }
 
     /**
@@ -63,10 +76,19 @@ class PageController extends Controller
     {
         $request->validate([
             'page_kategori' => 'required|integer',
-            'konten' => 'required|string',
+            'title' => 'required|string',
+            'subtitle' => 'required|string',
         ]);
 
-        $pageMaster->update($request->all());
+        $konten = json_encode([
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+        ]);
+
+        $pageMaster->update([
+            'page_kategori' => $request->page_kategori,
+            'konten' => $konten,
+        ]);
 
         return redirect()->route('admin.manage-page.index')->with('success', 'Page content updated successfully.');
     }

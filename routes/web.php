@@ -6,11 +6,10 @@ use App\Http\Controllers\Admin\BlogVideoController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\BlogArticleController;
 use App\Http\Controllers\Admin\BroadcastTelegramController;
+use App\Http\Controllers\Admin\FaqController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [FrontPageController::class, 'index'])->name('home');
 
 
 
@@ -23,6 +22,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('blog-article', BlogArticleController::class);
     Route::resource('manage-page', PageController::class);
     Route::resource('broadcast-telegram', BroadcastTelegramController::class);
+    Route::resource('faq', FaqController::class);
 });
 
 Route::controller(FrontPageController::class)->group(function () {
