@@ -15,6 +15,7 @@ class BlogVideo extends Model
 
     protected $fillable = [
         'title',
+        'slug',
         'id_kategori',
         'video_url',
         'alt_text',

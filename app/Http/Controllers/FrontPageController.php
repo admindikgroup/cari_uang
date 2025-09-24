@@ -16,7 +16,6 @@ class FrontPageController extends Controller
     public function index(): View
     {
         $faqs = Faq::all();
-        $roadmaps = Roadmap::all();
         $banner = PageMaster::where('page_kategori', 1)->first();
         $banner_title = '';
         $banner_subtitle = '';
@@ -26,7 +25,7 @@ class FrontPageController extends Controller
             $banner_subtitle = $banner_content['subtitle'] ?? '';
         }
 
-        return view('home', compact('faqs', 'roadmaps', 'banner_title', 'banner_subtitle'));
+        return view('home', compact('faqs', 'banner_title', 'banner_subtitle'));
     }
 
     public function blog(): View

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BlogKonten;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BlogArticleController extends Controller
 {
@@ -38,6 +39,7 @@ class BlogArticleController extends Controller
             'konten' => 'required|string',
         ]);
 
+        $request->merge(['slug' => Str::slug($request->title)]);
         BlogKonten::create($request->all());
 
         return redirect()->route('admin.blog-article.index')->with('success', 'Blog content created successfully.');
@@ -71,6 +73,7 @@ class BlogArticleController extends Controller
             'konten' => 'required|string',
         ]);
 
+        $request->merge(['slug' => Str::slug($request->title)]);
         $blog_article->update($request->all());
 
         return redirect()->route('admin.blog-article.index')->with('success', 'Blog content updated successfully.');

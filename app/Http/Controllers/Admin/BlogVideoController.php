@@ -7,6 +7,7 @@ use App\Models\BlogVideo;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class BlogVideoController extends Controller
 {
@@ -31,6 +32,7 @@ class BlogVideoController extends Controller
             'alt_text' => 'nullable|string',
         ]);
 
+        $request->merge(['slug' => Str::slug($request->title)]);
         $video = new BlogVideo($request->all());
         $video->created_by = Auth::id();
         $video->save();
@@ -53,6 +55,7 @@ class BlogVideoController extends Controller
             'alt_text' => 'nullable|string',
         ]);
 
+        $request->merge(['slug' => Str::slug($request->title)]);
         $blogVideo->update($request->all());
         $blogVideo->updated_by = Auth::id();
         $blogVideo->save();

@@ -15,6 +15,7 @@ class BlogKonten extends Model
 
     protected $fillable = [
         'title',
+        'slug',
         'id_kategori',
         'konten',
         'created_by',
