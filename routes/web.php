@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\BlogArticleController;
 use App\Http\Controllers\Admin\BroadcastTelegramController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\SubscriberController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontPageController::class, 'index'])->name('home');
@@ -23,6 +25,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('manage-page', PageController::class);
     Route::resource('broadcast-telegram', BroadcastTelegramController::class);
     Route::resource('faq', FaqController::class);
+    Route::resource('contact', ContactController::class)->except(['destroy']);
+    Route::resource('subscriber', SubscriberController::class)->except(['destroy']);
 });
 
 Route::controller(FrontPageController::class)->group(function () {
