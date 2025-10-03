@@ -11,6 +11,7 @@ use App\Models\Roadmap;
 use App\Models\PageMaster;
 use App\Models\Contact;
 use App\Models\Subscriber;
+use App\Models\CmsButton;
 use Illuminate\Http\RedirectResponse;
 
 class FrontPageController extends Controller
