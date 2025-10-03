@@ -52,27 +52,27 @@ class PageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(PageMaster $pageMaster)
+    public function show(PageMaster $manage_page)
     {
-        return view('admin.manage-page.show', compact('pageMaster'));
+        return view('admin.manage-page.show', compact('manage_page'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PageMaster $pageMaster)
+    public function edit(PageMaster $manage_page)
     {
-        $data = json_decode($pageMaster->konten, true);
+        $data = json_decode($manage_page->konten, true);
         $title = $data['title'] ?? '';
-        $subtitle = $data['subtitle'] ?? '';
+        $subtitle = data_get($data, 'subtitle', '');
 
-        return view('admin.manage-page.edit', compact('pageMaster', 'title', 'subtitle'));
+        return view('admin.manage-page.edit', compact('manage_page', 'title', 'subtitle'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, PageMaster $pageMaster)
+    public function update(Request $request, PageMaster $manage_page)
     {
         $request->validate([
             'page_kategori' => 'required|integer',
@@ -85,7 +85,7 @@ class PageController extends Controller
             'subtitle' => $request->subtitle,
         ]);
 
-        $pageMaster->update([
+        $manage_page->update([
             'page_kategori' => $request->page_kategori,
             'konten' => $konten,
         ]);
@@ -96,9 +96,9 @@ class PageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PageMaster $pageMaster)
+    public function destroy(PageMaster $manage_page)
     {
-        $pageMaster->delete();
+        $manage_page->delete();
         return redirect()->route('admin.manage-page.index')->with('success', 'Page content deleted successfully.');
     }
 }

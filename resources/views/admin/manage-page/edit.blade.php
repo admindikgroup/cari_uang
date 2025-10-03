@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <form action="{{ route('admin.manage-page.update', $pageMaster->id_master_page) }}" method="POST">
+                    <form action="{{ route('admin.manage-page.update', $manage_page->id_master_page) }}" method="POST">
                         @csrf
                         @method('PUT')
                         @include('admin.manage-page._form')
