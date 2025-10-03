@@ -10,9 +10,9 @@
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                         <ul class="navigation">
-                                            <li><a href="{{ route('home') }}">Home</a></li>
-                                            <li><a href="{{ route('home') }}#faq">FAQ</a></li>
-                                            <li><a href="{{ route('home') }}#roadmap">roadmap</a></li>
+                                            <li><a href="{{ route('home') }}#home" class="section-link">Home</a></li>
+                                            <li><a href="{{ route('home') }}#faq" class="section-link">FAQ</a></li>
+                                            <li><a href="{{ route('home') }}#roadmap" class="section-link">roadmap</a></li>
                                             <li><a href="{{ route('blog')}}">Article</a></li>
                                             <li><a href="{{ route('blog-video')}}">Video Blog</a></li>
                                         </ul>
