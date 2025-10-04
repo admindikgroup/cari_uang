@@ -28,7 +28,9 @@ class FrontPageController extends Controller
             $banner_subtitle = $banner_content['subtitle'] ?? '';
         }
 
-        return view('home', compact('faqs', 'banner_title', 'banner_subtitle'));
+        $cmsButtons = CmsButton::all();
+
+        return view('home', compact('faqs', 'banner_title', 'banner_subtitle', 'cmsButtons'));
     }
 
     public function blog(): View

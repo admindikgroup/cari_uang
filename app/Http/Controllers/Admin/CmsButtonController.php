@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\CmsButton;
 use Illuminate\Http\Request;
 
+
 class CmsButtonController extends Controller
 {
     /**
@@ -30,13 +31,13 @@ class CmsButtonController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'url' => 'required|url',
             'is_active' => 'required|boolean',
         ]);
 
-        CmsButton::create($request->all());
+        CmsButton::create($validated);
 
         return redirect()->route('admin.cms-button.index')->with('success', 'Button created successfully.');
     }
@@ -63,14 +64,14 @@ class CmsButtonController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'url' => 'required|url',
             'is_active' => 'required|boolean',
         ]);
 
         $button = CmsButton::findOrFail($id);
-        $button->update($request->all());
+        $button->update($validated);
 
         return redirect()->route('admin.cms-button.index')->with('success', 'Button updated successfully.');
     }

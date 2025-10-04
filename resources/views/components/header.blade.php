@@ -1,4 +1,49 @@
     <header id="home">
+        <style>
+            .tgmenu__action .has-dropdown {
+                position: relative;
+            }
+
+            .tgmenu__action .has-dropdown .submenu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: var(--tg-secondary-color);
+                border-radius: 10px;
+                padding: 10px 0;
+                min-width: 200px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.2);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(10px);
+                transition: all 0.3s ease-in-out;
+                z-index: 99;
+            }
+
+            .tgmenu__action .has-dropdown:hover .submenu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .tgmenu__action .has-dropdown .submenu li {
+                list-style: none;
+                margin: 0;
+            }
+
+            .tgmenu__action .has-dropdown .submenu li a {
+                display: block;
+                padding: 10px 20px;
+                color: var(--tg-heading-font-color);
+                text-decoration: none;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .tgmenu__action .has-dropdown .submenu li a:hover {
+                background: var(--tg-primary-color);
+                color: var(--tg-color-dark);
+            }
+        </style>
         <div id="sticky-header" class="tg-header__area transparent-header">
             <div class="container">
                 <div class="row">
@@ -19,8 +64,13 @@
                                 </div>
                                 <div class="tgmenu__action">
                                     <ul class="list-wrap">
-                                        <li class="header-btn">
-                                            <a href="{{ route('contact-us') }}" class="tg-btn">Gabung Sekarang</a>
+                                        <li class="header-btn has-dropdown">
+                                            <a href="#" class="tg-btn">Gabung Sekarang</a>
+                                            <ul class="submenu">
+                                                @foreach ($cmsButtons as $button)
+                                                    <li><a href="{{ $button->url }}">{{ $button->name }}</a></li>
+                                                @endforeach
+                                            </ul>
                                         </li>
                                     </ul>
                                 </div>

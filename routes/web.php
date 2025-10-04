@@ -8,7 +8,9 @@ use App\Http\Controllers\Admin\BlogArticleController;
 use App\Http\Controllers\Admin\BroadcastTelegramController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ContactController;
-use App\\Http\Controllers\\Admin\\SubscriberController;\nuse App\\Http\\Controllers\\Admin\\CmsButtonController;\nuse Illuminate\\Support\\Facades\\Route;
+use App\Http\Controllers\Admin\SubscriberController;
+use App\Http\Controllers\Admin\CmsButtonController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontPageController::class, 'index'])->name('home');
 

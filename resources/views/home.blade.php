@@ -53,13 +53,29 @@
                         <div class="banner__content">
                             <h2 class="title wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1s">{!! $banner_title !!}</h2>
                             <p class="wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1s">{{ $banner_subtitle }}</p>
-                            <form action="{{ route('subscribe') }}" method="POST" class="banner__form wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1s">
-                                @csrf
-                                <label for="text_subscribe"><img src="{{ asset('assets/img/icon/envelope.svg') }}" alt=""></label>
-                                <input type="text" name="contact" id="text_subscribe" placeholder="Telegram/Phone Number">
-                                <button type="submit" class="tg-btn">Join Now!</button>
-                            </form>
-                            <span class="banner__content-bottom wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1s">Join sekarang dengan mengisi form diatas!</a></span>
+                            <div class="banner__form wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1s">
+                                <div class="d-flex justify-content-center">
+                                    @foreach ($cmsButtons as $button)
+                                        @php
+                                            $icon = '';
+                                            $target = '_self';
+                                            $buttonName = strtolower($button->name);
+                                            if ($buttonName == 'whatsapp') {
+                                                $icon = 'fab fa-whatsapp';
+                                            } elseif ($buttonName == 'telegram') {
+                                                $icon = 'fab fa-telegram';
+                                            } else {
+                                                $icon = 'fas fa-link';
+                                                $target = '_blank';
+                                            }
+                                        @endphp
+                                        <a href="{{ $button->url }}" target="{{ $target }}" class="tg-btn mx-2">
+                                            <i class="{{ $icon }}"></i>   {{ $button->name }}
+                                        </a>
+                                    @endforeach
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

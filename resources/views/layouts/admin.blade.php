@@ -45,6 +45,14 @@
                             <img src="{{ asset('assets/img/icon/crypto_icon01.svg') }}" class="h-6 w-6" alt="FAQ">
                             <span x-show="sidebarOpen" class="ml-2 transition-opacity duration-300">Manage FAQ</span>
                         </a>
+                        <a href="{{ route('admin.contact.index') }}" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-amber-200 {{ request()->routeIs('admin.contact.*') ? 'bg-amber-200' : '' }}" :class="{'justify-center': !sidebarOpen}">
+                            <img src="{{ asset('assets/img/icon/crypto_icon04.svg') }}" class="h-6 w-6" alt="Contact Us">
+                            <span x-show="sidebarOpen" class="ml-2 transition-opacity duration-300">Contact Us</span>
+                        </a>
+                        <a href="{{ route('admin.cms-button.index') }}" class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-amber-200 {{ request()->routeIs('admin.cms-button.*') ? 'bg-amber-200' : '' }}" :class="{'justify-center': !sidebarOpen}">
+                            <img src="{{ asset('assets/img/icon/crypto_icon05.svg') }}" class="h-6 w-6" alt="CMS Button">
+                            <span x-show="sidebarOpen" class="ml-2 transition-opacity duration-300">CMS Button</span>
+                        </a>
                     </nav>
                 </div>
 
