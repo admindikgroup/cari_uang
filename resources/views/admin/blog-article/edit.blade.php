@@ -56,7 +56,8 @@
     </div>
 
     @push('scripts')
-    <script src="https://cdn.tiny.cloud/1/eekfvdcqyuca9jwq0g71dwctqxq15vbjhwmmirvgqq2utq3p/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+    <script src="https://cdn.tiny.cloud/1/825datvr58prncihsagponmuxfgatq69r0aojbg7qqi2865e/tinymce/8/tinymce.min.js" 
+        referrerpolicy="origin"></script>
     <script>
         tinymce.init({
             selector: 'textarea#konten',

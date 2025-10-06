@@ -95,8 +95,8 @@
                     <div class="col-lg-6">
                         <div class="faq__content" data-aos="fade-left" data-aos-delay="0">
                             <div class="section__title mb-60">
-                                <span class="sub-title">faq & ans</span>
-                                <h2 class="title">Get every <span>single</span> <br> answer</h2>
+                                <span class="sub-title">Our Services</span>
+                                <h2 class="title">Get every <span>Our</span> <br> Services</h2>
                             </div>
                             <div class="faq__wrap">
                                 <div class="accordion" id="accordionExample">

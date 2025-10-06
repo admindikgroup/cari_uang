@@ -11,7 +11,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="mb-4">
                         <a href="{{ route('admin.faq.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Create New FAQ
+                            Create New Our Services
                         </a>
                     </div>
                     <table class="min-w-full divide-y divide-gray-200">
@@ -21,10 +21,10 @@
                                     No
                                 </th>
                                 <th scope="col" class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Question
+                                    Our Services
                                 </th>
                                 <th scope="col" class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Answer
+                                    Description
                                 </th>
                                 <th scope="col" class="px-3 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
                                    Actions
