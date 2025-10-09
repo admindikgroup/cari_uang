@@ -53,7 +53,7 @@
   --tg-heading-line-height: 1.2;
   --tg-body-font-color: #888888;
   --tg-heading-font-color: #FFFFFF;
-  --tg-primary-color: #FFCC66;
+  --tg-primary-color: #12f55d;
   --tg-secondary-color: #191A1B;
   --tg-color-dark-blue: #0E104B;
   --tg-color-yellow-light: #FFBE17;
@@ -1295,14 +1295,19 @@ textarea {
 
 .tgmenu__wrap {
   margin-top: 30px;
-  background: var(--tg-secondary-color);
-  -webkit-border-radius: 35px;
-  -moz-border-radius: 35px;
-  -o-border-radius: 35px;
-  -ms-border-radius: 35px;
-  border-radius: 35px;
+  background: rgba(var(--tg-secondary-color-rgb, 15, 23, 42), 0.15); /* transparan */
+  border-radius: 10px; /* lebih tajam dari 35px */
   padding: 0 20px;
+  backdrop-filter: blur(8px); /* efek kaca transparan */
+  transition: all 0.3s ease-in-out; /* animasi halus saat hover */
 }
+
+/* Hover: kembali solid */
+.tgmenu__wrap:hover {
+  background: var(--tg-secondary-color); /* solid lagi */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25); /* efek shadow elegan */
+}
+
 @media (max-width: 991.98px) {
   .tgmenu__wrap {
     padding: 14px 20px;
@@ -1311,6 +1316,7 @@ textarea {
 @media (max-width: 767.98px) {
   .tgmenu__wrap {
     margin-top: 20px;
+    
   }
 }
 .tgmenu__nav {
