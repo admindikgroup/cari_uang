@@ -21,9 +21,16 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('admin.blog-article.update', $blog_article) }}" method="POST">
+                    <form action="{{ route('admin.blog-article.update', $blog_article) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                        <div class="mb-4">
+                            <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Image:</label>
+                            <input type="file" name="image" id="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            @if ($blog_article->image)
+                                <img src="{{ asset('storage/images/' . $blog_article->image) }}" alt="{{ $blog_article->title }}" class="w-32 h-32 mt-4">
+                            @endif
+                        </div>
                         <div class="mb-4">
                             <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title:</label>
                             <input type="text" name="title" id="title" value="{{ old('title', $blog_article->title) }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>

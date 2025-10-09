@@ -18,6 +18,7 @@ class BlogKonten extends Model
         'slug',
         'id_kategori',
         'konten',
+        'image',
         'created_by',
         'updated_by',
     ];

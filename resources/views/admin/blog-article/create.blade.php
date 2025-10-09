@@ -21,8 +21,12 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('admin.blog-article.store') }}" method="POST">
+                    <form action="{{ route('admin.blog-article.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        <div class="mb-4">
+                            <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Image:</label>
+                            <input type="file" name="image" id="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        </div>
                         <div class="mb-4">
                             <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title:</label>
                             <input type="text" name="title" id="title" value="{{ old('title') }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>

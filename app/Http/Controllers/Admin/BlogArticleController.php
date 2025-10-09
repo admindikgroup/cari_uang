@@ -7,6 +7,7 @@ use App\Models\BlogKonten;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class BlogArticleController extends Controller
 {
@@ -37,10 +38,20 @@ class BlogArticleController extends Controller
             'title' => 'required|string|max:255',
             'id_kategori' => 'required|exists:kategori,id_kategori',
             'konten' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $request->merge(['slug' => Str::slug($request->title)]);
-        BlogKonten::create($request->all());
+
+        $data = $request->all();
+
+        if ($request->hasFile('image')) {
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->storeAs('public/images', $imageName);
+            $data['image'] = $imageName;
+        }
+
+        BlogKonten::create($data);
 
         return redirect()->route('admin.blog-article.index')->with('success', 'Blog content created successfully.');
     }
@@ -71,10 +82,23 @@ class BlogArticleController extends Controller
             'title' => 'required|string|max:255',
             'id_kategori' => 'required|exists:kategori,id_kategori',
             'konten' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $request->merge(['slug' => Str::slug($request->title)]);
-        $blog_article->update($request->all());
+        $data = $request->all();
+
+        if ($request->hasFile('image')) {
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->storeAs('public/images', $imageName);
+            $data['image'] = $imageName;
+
+            if ($blog_article->image) {
+                Storage::delete('public/images/' . $blog_article->image);
+            }
+        }
+
+        $blog_article->update($data);
 
         return redirect()->route('admin.blog-article.index')->with('success', 'Blog content updated successfully.');
     }
