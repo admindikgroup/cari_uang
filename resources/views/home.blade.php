@@ -69,7 +69,7 @@
                                                 $target = '_blank';
                                             }
                                         @endphp
-                                        <a href="{{ $button->url }}" target="{{ $target }}" class="tg-btn mx-2 mb-2 mb-md-0">
+                                        <a href="{{ $button->url }}" target="{{ $target }}" class="tg-btn mx-2 mb-2 mb-md-0 d-flex align-items-center justify-content-center text-center">
                                             <i class="{{ $icon }}"></i>   {{ $button->name }}
                                         </a>
                                     @endforeach
