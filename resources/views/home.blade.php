@@ -54,7 +54,7 @@
                             <h2 class="title wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1s">{!! $banner_title !!}</h2>
                             <p class="wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1s">{{ $banner_subtitle }}</p>
                             <div class="banner__form wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1s">
-                                <div class="d-flex justify-content-center">
+                                <div class="d-flex flex-column flex-md-row justify-content-center">
                                     @foreach ($cmsButtons as $button)
                                         @php
                                             $icon = '';
@@ -69,7 +69,7 @@
                                                 $target = '_blank';
                                             }
                                         @endphp
-                                        <a href="{{ $button->url }}" target="{{ $target }}" class="tg-btn mx-2">
+                                        <a href="{{ $button->url }}" target="{{ $target }}" class="tg-btn mx-2 mb-2 mb-md-0">
                                             <i class="{{ $icon }}"></i>   {{ $button->name }}
                                         </a>
                                     @endforeach
