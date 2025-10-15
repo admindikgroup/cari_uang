@@ -50,18 +50,11 @@
             <div class="container">
                 <div class="blog__details-wrap">
                     <div class="blog__details-thumb-wrap">
-                        <div class="row gutter-40">
-                            <div class="col-md-6">
-                                <div class="blog__details-thumb">
-                                    <img src="{{ asset('assets/img/blog/blog_details_img01.jpg') }}" alt="img">
-                                </div>
+                        @if ($article->image)
+                            <div class="blog__details-thumb">
+                                <img src="{{ asset('storage/images/' . $article->image) }}" alt="{{ $article->title }}">
                             </div>
-                            <div class="col-md-6">
-                                <div class="blog__details-thumb">
-                                    <img src="{{ asset('assets/img/blog/blog_details_img02.jpg') }}" alt="img">
-                                </div>
-                            </div>
-                        </div>
+                        @endif
                     </div>
                     <div class="blog__details-content">
                         <span class="date">{{ $article->created_at->format('F d, Y') }}</span>
