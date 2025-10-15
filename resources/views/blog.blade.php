@@ -71,7 +71,13 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="{{ route('blog.detail', $article) }}" class="shine__animate-link"><img src="{{ asset('assets/img/blog/blog_post01.jpg') }}" alt="img"></a>
+                                <a href="{{ route('blog.detail', $article) }}" class="shine__animate-link">
+                                    @if ($article->image)
+                                        <img src="{{ asset('storage/images/' . $article->image) }}" alt="{{ $article->title }}">
+                                    @else
+                                        <img src="{{ asset('assets/img/blog/blog_post01.jpg') }}" alt="{{ $article->title }}">
+                                    @endif
+                                </a>
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">{{ $article->created_at->format('F d, Y') }}</span>
