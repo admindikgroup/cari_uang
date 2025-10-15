@@ -73,9 +73,9 @@
                             <div class="blog__post-thumb">
                                 <a href="{{ route('blog.detail', $article) }}" class="shine__animate-link">
                                     @if ($article->image)
-                                        <img src="{{ asset('storage/images/' . $article->image) }}" alt="{{ $article->title }}">
+                                        <img src="{{ asset('storage/images/' . $article->image) }}" alt="{{ $article->title }}" style="width: 100%; height: 375px; object-fit: cover;">
                                     @else
-                                        <img src="{{ asset('assets/img/blog/blog_post01.jpg') }}" alt="{{ $article->title }}">
+                                        <img src="{{ asset('assets/img/blog/blog_post01.jpg') }}" alt="{{ $article->title }}" style="width: 100%; height: 375px; object-fit: cover;">
                                     @endif
                                 </a>
                             </div>
