@@ -15,6 +15,7 @@ class PageMaster extends Model
     protected $fillable = [
         'page_kategori',
         'konten',
+        'status_active',
         'created_by',
         'updated_by',
     ];

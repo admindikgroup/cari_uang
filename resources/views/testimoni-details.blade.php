@@ -72,40 +72,16 @@
             <div class="container">
                 <div class="blog__details-wrap">
                     <div class="blog__details-thumb-wrap">
-                        <div class="row gutter-40">
-                            <div class="col-md-12">
-                                <div class="blog__details-thumb" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                                    @php
-                                        $url = $video->video_url;
-                                        $videoId = null;
-
-                                        // Tangkap ID dari berbagai format YouTube
-                                        if (preg_match('/youtu\.be\/([^\?&]+)/', $url, $matches)) {
-                                            $videoId = $matches[1];
-                                        } elseif (preg_match('/v=([^\?&]+)/', $url, $matches)) {
-                                            $videoId = $matches[1];
-                                        } elseif (preg_match('/embed\/([^\?&]+)/', $url, $matches)) {
-                                            $videoId = $matches[1];
-                                        }
-
-                                        $embedUrl = $videoId ? "https://www.youtube.com/embed/{$videoId}" : null;
-                                    @endphp
-
-                                    @if ($embedUrl)
-                                        <div class="blog__details-thumb" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                                            <iframe src="{{ $embedUrl }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen title="YouTube video player"></iframe>
-                                        </div>
-                                    @else
-                                        <p class="text-danger">Invalid YouTube URL</p>
-                                    @endif
-
-                                </div>
+                        @if ($article->image)
+                            <div class="blog__details-thumb" style="display: flex; justify-content: center;">
+                                <img src="{{ asset('storage/images/' . $article->image) }}" alt="{{ $article->title }}" style ="height: 500px; width: auto;">
                             </div>
-                        </div>
+                        @endif
                     </div>
                     <div class="blog__details-content">
-                        <h2 class="title">{{ $video->title }}</h2>
-                        {!! $video->alt_text !!}
+                        <span class="date">{{ $article->created_at->format('F d, Y') }}</span>
+                        <h2 class="title">{{ $article->title }}</h2>
+                        {!! $article->konten !!}
                     </div>
                 </div>
             </div>

@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Artikel & Berita Cari Uang</title>
-    <meta name="description" content="Artikel & Berita Cari Uang">
+    <title>Cari Uang</title>
+    <meta name="description" content="Cari Uang">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
@@ -21,8 +21,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="canonical" href="{{ url()->current() }}" />
-    
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17689697869"></script>
     <script>
@@ -74,7 +73,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="banner__content breadcrumb__content">
-                            <h2 class="title">Blog & Insights</h2>
+                            <!-- <span class="sub-title">Biarkan Mereka Yang Bersuara</span> -->
+                            <h2 class="title">Testimoni</h2>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="{{ route('blog.detail', $article) }}" class="shine__animate-link">
+                                <a href="{{ route('testimoni.detail', $article) }}" class="shine__animate-link">
                                     @if ($article->image)
                                         <img src="{{ asset('storage/images/' . $article->image) }}" alt="{{ $article->title }}" style="width: 100%; height: 375px; object-fit: cover;">
                                     @else
@@ -103,7 +103,7 @@
                             </div>
                             <div class="blog__post-content">
                                 <span class="date">{{ $article->created_at->format('F d, Y') }}</span>
-                                <h2 class="title"><a href="{{ route('blog.detail', $article) }}">{{ $article->title }}</a></h2>
+                                <h2 class="title"><a href="{{ route('testimoni.detail', $article) }}">{{ $article->title }}</a></h2>
                             </div>
                         </div>
                     </div>

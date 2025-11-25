@@ -30,14 +30,14 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
             'message' => 'required',
         ]);
 
-        Contact::create($request->all());
+        Contact::create($validated);
 
         return redirect()->route('admin.contact.index')
             ->with('success', 'Contact created successfully.');
@@ -64,14 +64,14 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
             'message' => 'required',
         ]);
 
-        $contact->update($request->all());
+        $contact->update($validated);
 
         return redirect()->route('admin.contact.index')
             ->with('success', 'Contact updated successfully');

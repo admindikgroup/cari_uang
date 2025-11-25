@@ -51,10 +51,10 @@
                                         <ul class="navigation">
                                             <li><a href="{{ route('home') }}">Home</a></li>
                                             <li><a href="{{ route('home') }}#direction">Direction</a></li>
-                                            <li><a href="{{ route('home') }}#faq">FAQ</a></li>
-                                            <li><a href="{{ route('home') }}#roadmap">roadmap</a></li>
+                                            <li><a href="{{ route('home') }}#faq">SERVICE</a></li>
+                                            <li><a href="{{ route('home') }}#roadmap">FEATURE</a></li>
                                             <li><a href="{{ route('contact-us') }}">Kontak</a></li>
-                                            <li class="menu-item-has-children"><a href="{{ route('blog')}}">blog</a>
+                                            <li class="menu-item-has-children"><a href="{{ route('blog')}}">TESTIMONIAL</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="{{ route('blog')}}">Our Blog</a></li>
                                                     <li><a href="{{ route('blog-video')}}">Video Blog</a></li>

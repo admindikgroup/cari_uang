@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Cari Uang</title>
-    <meta name="description" content="Cari Uang">
+    <title>{{ $article->title }}</title>
+    <meta name="description" content="{{ $article->title }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
@@ -20,7 +20,30 @@
     <link rel="stylesheet" href="{{ asset('assets/css/default.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="canonical" href="{{ url()->current() }}" />
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17689697869"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17689697869');
+    </script>
+
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q14C55775R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q14C55775R');
+</script>
 
 <body>
 
@@ -51,15 +74,15 @@
                 <div class="blog__details-wrap">
                     <div class="blog__details-thumb-wrap">
                         @if ($article->image)
-                            <div class="blog__details-thumb">
-                                <img src="{{ asset('storage/images/' . $article->image) }}" alt="{{ $article->title }}">
+                            <div class="blog__details-thumb" style="display: flex; justify-content: center;">
+                                <img src="{{ asset('storage/images/' . $article->image) }}" alt="{{ $article->title }}" style ="height: 500px; width: auto;">
                             </div>
                         @endif
                     </div>
                     <div class="blog__details-content">
                         <span class="date">{{ $article->created_at->format('F d, Y') }}</span>
-                        <h2 class="title">{{ $article->title }}</h2>
-                        <span class="date">TAG: {{ $article->kategori->nama_kategori }}</span>
+                        <h1 class="title">{{ $article->title }}</h1>
+                        <!-- <span class="date">TAG: {{ $article->kategori->nama_kategori }}</span> -->
                         {!! $article->konten !!}
                     </div>
                 </div>

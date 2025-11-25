@@ -30,12 +30,12 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'question' => 'required',
             'answer' => 'required',
         ]);
 
-        Faq::create($request->all());
+        Faq::create($validated);
 
         return redirect()->route('admin.faq.index')
             ->with('success', 'FAQ created successfully.');
@@ -62,12 +62,12 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
-        $request->validate([
+        $validated = $request->validate([
             'question' => 'required',
             'answer' => 'required',
         ]);
 
-        $faq->update($request->all());
+        $faq->update($validated);
 
         return redirect()->route('admin.faq.index')
             ->with('success', 'FAQ updated successfully');

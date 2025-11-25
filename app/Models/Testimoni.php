@@ -5,19 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BroadcastTelegram extends Model
+class Testimoni extends Model
 {
     use HasFactory;
 
-    protected $table = 'broadcast_message';
-    protected $primaryKey = 'id_broadcast_message';
+    protected $table = 'blog_testimoni';
+
+    protected $primaryKey = 'id_blog_testimoni';
 
     protected $fillable = [
         'title',
-        'konten_broadcast',
-        'expired',
+        'slug',
+        'konten',
+        'image',
         'created_by',
         'updated_by',
+        'created_at',
+        'updated_at'
     ];
+
 }
 

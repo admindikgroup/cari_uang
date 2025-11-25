@@ -25,17 +25,22 @@ class BlogVideoController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
             'id_kategori' => 'required|exists:kategori,id_kategori',
             'video_url' => 'required|url',
             'alt_text' => 'nullable|string',
         ]);
 
-        $request->merge(['slug' => Str::slug($request->title)]);
-        $video = new BlogVideo($request->all());
-        $video->created_by = Auth::id();
-        $video->save();
+        $slug = Str::slug($validated['title']);
+        $count = BlogVideo::where('slug', 'LIKE', "{$slug}%")->count();
+        if ($count > 0) {
+            $slug .= '-' . ($count + 1);
+        }
+        $validated['slug'] = $slug;
+        $validated['created_by'] = Auth::id();
+
+        BlogVideo::create($validated);
 
         return redirect()->route('admin.blog-video.index')->with('success', 'Video created successfully.');
     }
@@ -48,17 +53,24 @@ class BlogVideoController extends Controller
 
     public function update(Request $request, BlogVideo $blogVideo)
     {
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
             'id_kategori' => 'required|exists:kategori,id_kategori',
             'video_url' => 'required|url',
             'alt_text' => 'nullable|string',
         ]);
 
-        $request->merge(['slug' => Str::slug($request->title)]);
-        $blogVideo->update($request->all());
-        $blogVideo->updated_by = Auth::id();
-        $blogVideo->save();
+        $slug = Str::slug($validated['title']);
+        if ($slug !== $blogVideo->slug) {
+            $count = BlogVideo::where('slug', 'LIKE', "{$slug}%")->where('id_blog_video', '!=', $blogVideo->id_blog_video)->count();
+            if ($count > 0) {
+                $slug .= '-' . ($count + 1);
+            }
+            $validated['slug'] = $slug;
+        }
+        $validated['updated_by'] = Auth::id();
+
+        $blogVideo->update($validated);
 
         return redirect()->route('admin.blog-video.index')->with('success', 'Video updated successfully.');
     }

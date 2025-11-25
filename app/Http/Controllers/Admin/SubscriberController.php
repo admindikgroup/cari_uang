@@ -30,11 +30,11 @@ class SubscriberController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'contact' => 'required',
         ]);
 
-        Subscriber::create($request->all());
+        Subscriber::create($validated);
 
         return redirect()->route('admin.subscriber.index')
             ->with('success', 'Subscriber created successfully.');
@@ -61,11 +61,11 @@ class SubscriberController extends Controller
      */
     public function update(Request $request, Subscriber $subscriber)
     {
-        $request->validate([
+        $validated = $request->validate([
             'contact' => 'required',
         ]);
 
-        $subscriber->update($request->all());
+        $subscriber->update($validated);
 
         return redirect()->route('admin.subscriber.index')
             ->with('success', 'Subscriber updated successfully');

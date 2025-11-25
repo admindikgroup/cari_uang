@@ -20,7 +20,29 @@
     <link rel="stylesheet" href="{{ asset('assets/css/default.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="canonical" href="{{ url()->current() }}" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17689697869"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17689697869');
+    </script>
+
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q14C55775R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q14C55775R');
+</script>
 
 <body>
 
@@ -91,35 +113,18 @@
     <!-- main-area-end -->
 
     <!-- footer-area -->
-    <footer class="footer__area footer__area-two">
+    <footer class="footer__area">
         <div class="container">
             <div class="footer__top">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="footer__content">
-                            
-                            <span class="sub-title">Built on web3. Powered by You</span>
-                            <h2 class="title">Join with our <span>future</span> of Webzo currency</h2>
+                            <h2 class="title"> TURN OPPORTUNITIES <span>INTO</span> FORTUNE, SMART AND  SIMPLE </h2>
+                            <h3> MAKSIMALKAN PELUANG KEUTUNGAN KALIAN DENGAN BERGABUNG BERSAMA KAMI </h3>
                             <div class="team__social-wrap">
                                 <ul class="list-wrap">
                                     <li>
-                                        <a href="#!">
-                                            <div class="shape">
-                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
-                                            </div>
-                                            <img src="{{ asset('assets/img/icon/facebook.svg') }}" alt="icon" class="icon">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <div class="shape">
-                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
-                                            </div>
-                                            <img src="{{ asset('assets/img/icon/twitter.svg') }}" alt="icon" class="icon">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
+                                        <a href="https://t.me/adhamcy">
                                             <div class="shape">
                                                 <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
                                             </div>
@@ -127,11 +132,35 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#!">
+                                        <a href="https://wa.me/+19035229093?text=gabung%20grup%20vip">
                                             <div class="shape">
                                                 <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
                                             </div>
-                                            <img src="{{ asset('assets/img/icon/discord.svg') }}" alt="icon" class="icon">
+                                            <img src="{{ asset('assets/img/icon/wa.svg') }}" alt="icon" class="icon">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://youtube.com/@Adhamcy">
+                                            <div class="shape">
+                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
+                                            </div>
+                                            <img src="{{ asset('assets/img/icon/youtube4.svg') }}" alt="icon" class="icon">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://youtube.com/@taniacy88">
+                                            <div class="shape">
+                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
+                                            </div>
+                                            <img src="{{ asset('assets/img/icon/youtube4.svg') }}" alt="icon" class="icon">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://official.olymptrade-id-me.com/id-id?affiliate_id=512764&subid1=E69&subid2=">
+                                            <div class="shape">
+                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
+                                            </div>
+                                            <img src="{{ asset('assets/img/icon/dollar.svg') }}" alt="icon" class="icon">
                                         </a>
                                     </li>
                                 </ul>

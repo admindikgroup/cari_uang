@@ -21,27 +21,42 @@ class BroadcastTelegramController extends Controller
         return view('admin.broadcast-telegram.create');
     }
 
+
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
             'konten_broadcast' => 'required|string',
+            'expired' => 'required|date|after:now',
         ]);
 
-        $message = new BroadcastTelegram($request->all());
+        $message = new BroadcastTelegram();
+        $message->title = $validated['title'];
+        $message->konten_broadcast = $validated['konten_broadcast'];
+        $message->expired = $validated['expired'];
         $message->created_by = Auth::id();
         $message->save();
 
-        $telegram = new Api(env('TELEGRAM_BOT_TOKEN'));
-        $chatId = env('TELEGRAM_CHAT_ID');
+        $telegram = new Api(config('services.telegram.bot_token'));
+        $chatId = config('services.telegram.chat_id');
 
-        $reponse = $telegram->sendMessage([
+        // Bersihkan HTML
+        $allowedTags = '<b><i><u><s><a><code><pre>';
+        $cleanText = strip_tags($validated['konten_broadcast'], $allowedTags);
+        $cleanText = str_replace(['<p>', '</p>', '<br>', '<br/>', '<br />'], "\n", $cleanText);
+        $cleanText = trim($cleanText);
+
+        $response = $telegram->sendMessage([
             'chat_id' => $chatId,
-            'text' => $request->konten_broadcast,
+            'text' => $cleanText,
+            'parse_mode' => 'HTML',
         ]);
 
-        return redirect()->route('admin.broadcast-telegram.index')->with('success', 'Broadcast message created successfully.');
+        return redirect()->route('admin.broadcast-telegram.index')
+            ->with('success', 'Broadcast message created successfully with expiry date.');
     }
+
+
 
     public function edit(BroadcastTelegram $broadcastTelegram)
     {
@@ -50,16 +65,24 @@ class BroadcastTelegramController extends Controller
 
     public function update(Request $request, BroadcastTelegram $broadcastTelegram)
     {
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
             'konten_broadcast' => 'required|string',
+            'expired' => 'required|date|after:now',
         ]);
 
-        $broadcastTelegram->update($request->all());
+        $broadcastTelegram->update([
+            'title' => $validated['title'],
+            'konten_broadcast' => $validated['konten_broadcast'],
+            'expired' => $validated['expired'],
+        ]);
+
         $broadcastTelegram->updated_by = Auth::id();
         $broadcastTelegram->save();
 
         return redirect()->route('admin.broadcast-telegram.index')->with('success', 'Broadcast message updated successfully.');
+
+
     }
 
     public function destroy(BroadcastTelegram $broadcastTelegram)

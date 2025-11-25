@@ -51,15 +51,33 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo">
-                                    <a href="{{ route('home') }}"><img style="height: 100px; width: 80px;" src="{{ asset('assets/img/logo/IMG_1918.png') }}" alt="Logo Cari Uang"></a>
+                                    <a href="{{ route('home') }}"><img style="height: 300px !important; width: auto !important; object-fit: contain !important;" src="{{ asset('assets/img/logo/svg (9).svg') }}" alt="Logo Cari Uang"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                         <ul class="navigation">
-                                            <li><a href="{{ route('home') }}#home" class="section-link">Home</a></li>
-                                            <li><a href="{{ route('home') }}#faq" class="section-link">Service</a></li>
-                                            <li><a href="{{ route('home') }}#roadmap" class="section-link">Feature</a></li>
-                                            <li><a href="{{ route('blog')}}">Testimonial</a></li>
-                                            <li><a href="{{ route('blog-video')}}">Video Blog</a></li>
+                                            <li>
+                                                <a href="{{ route('home') }}{{ request()->routeIs('home') ? '#home' : '' }}"
+                                                class="section-link {{ request()->routeIs('home') ? 'active' : '' }}">
+                                                Home
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="{{ route('home') }}{{ request()->routeIs('home') ? '#faq' : '' }}"
+                                                class="section-link">
+                                                Service
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="{{ route('home') }}{{ request()->routeIs('home') ? '#roadmap' : '' }}"
+                                                class="section-link">
+                                                Feature
+                                                </a>
+                                            </li>
+                                            <li class="{{ request()->is('blog') ? 'active' : '' }}"><a href="{{ route('blog')}}">Artikel</a></li>
+                                            <li class="{{ request()->is('blog-video') ? 'active' : '' }}"><a href="{{ route('blog-video')}}">Video Blog</a></li>
+                                            <li class="{{ request()->is('testimoni') ? 'active' : '' }}"><a href="{{ route('testimoni')}}">Testimoni</a></li>
                                         </ul>
                                 </div>
                                 <div class="tgmenu__action">
@@ -87,7 +105,7 @@
             <nav class="tgmobile__menu-box">
                 <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
                 <div class="nav-logo">
-                    <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo/logo.svg') }}" alt="Logo"></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo/svg (9).svg') }}" alt="Logo"></a>
                 </div>
                 <div class="tgmobile__search">
                     <form action="#">
@@ -99,12 +117,12 @@
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                 </div>
                 <div class="social-links">
-                    <ul class="list-wrap">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <ul class="social-links">
+                        <li><a href="https://wa.me/+19035229093?text=gabung%20grup%20vip" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a></li>
+                        <li><a href="https://t.me/adhamcy" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram-plane"></i></a></li>
+                        <li><a href="https://youtube.com/@Adhamcy" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="https://youtube.com/@taniacy88" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="https://olymptrade-vid.com/?affiliate_id=512764&subid1=E69&subid2=" target="_blank" rel="noopener noreferrer"><i class="fas fa-dollar-sign"></i></a></li>
                     </ul>
                 </div>
             </nav>

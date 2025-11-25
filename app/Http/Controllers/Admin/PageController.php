@@ -30,19 +30,19 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'page_kategori' => 'required|integer',
             'title' => 'required|string',
             'subtitle' => 'required|string',
         ]);
 
         $konten = json_encode([
-            'title' => $request->title,
-            'subtitle' => $request->subtitle,
+            'title' => $validated['title'],
+            'subtitle' => $validated['subtitle'],
         ]);
 
         PageMaster::create([
-            'page_kategori' => $request->page_kategori,
+            'page_kategori' => $validated['page_kategori'],
             'konten' => $konten,
         ]);
 
@@ -74,24 +74,38 @@ class PageController extends Controller
      */
     public function update(Request $request, PageMaster $manage_page)
     {
-        $request->validate([
+        $validated = $request->validate([
             'page_kategori' => 'required|integer',
             'title' => 'required|string',
             'subtitle' => 'required|string',
         ]);
 
         $konten = json_encode([
-            'title' => $request->title,
-            'subtitle' => $request->subtitle,
+            'title' => $validated['title'],
+            'subtitle' => $validated['subtitle'],
         ]);
 
         $manage_page->update([
-            'page_kategori' => $request->page_kategori,
+            'page_kategori' => $validated['page_kategori'],
             'konten' => $konten,
         ]);
 
         return redirect()->route('admin.manage-page.index')->with('success', 'Page content updated successfully.');
     }
+
+    public function activate($id)
+    {
+        // Nonaktifkan semua
+        PageMaster::query()->update(['status_active' => 0]);
+
+        // Aktifkan yang dipilih
+        $page = PageMaster::findOrFail($id);
+        $page->status_active = 1;
+        $page->save();
+
+        return redirect()->route('admin.manage-page.index')->with('success', 'Page content activated successfully.');
+    }
+
 
     /**
      * Remove the specified resource from storage.

@@ -1,0 +1,52 @@
+[08-Sep-2025 11:23:38 UTC] PHP Warning:  require(/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php): Failed to open stream: No such file or directory in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 11:23:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/dggroupi/public_html/client/staging_cariuang/artisan:9
+Stack trace:
+#0 {main}
+  thrown in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 11:45:33 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in Command line code on line 1
+[08-Sep-2025 11:45:33 UTC] PHP Warning:  copy(https://getcomposer.org/installer): Failed to open stream: no suitable wrapper could be found in Command line code on line 1
+[08-Sep-2025 12:24:40 UTC] PHP Warning:  require(/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php): Failed to open stream: No such file or directory in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:24:40 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/dggroupi/public_html/client/staging_cariuang/artisan:9
+Stack trace:
+#0 {main}
+  thrown in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:25:22 UTC] PHP Warning:  require(/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php): Failed to open stream: No such file or directory in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:25:22 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/dggroupi/public_html/client/staging_cariuang/artisan:9
+Stack trace:
+#0 {main}
+  thrown in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:26:18 UTC] PHP Warning:  require(/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php): Failed to open stream: No such file or directory in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:26:18 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/dggroupi/public_html/client/staging_cariuang/artisan:9
+Stack trace:
+#0 {main}
+  thrown in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:26:21 UTC] PHP Warning:  require(/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php): Failed to open stream: No such file or directory in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:26:21 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/dggroupi/public_html/client/staging_cariuang/artisan:9
+Stack trace:
+#0 {main}
+  thrown in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:28:20 UTC] PHP Warning:  require(/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php): Failed to open stream: No such file or directory in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:28:20 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/dggroupi/public_html/client/staging_cariuang/artisan:9
+Stack trace:
+#0 {main}
+  thrown in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:29:10 UTC] PHP Warning:  require(/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php): Failed to open stream: No such file or directory in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:29:10 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/dggroupi/public_html/client/staging_cariuang/artisan:9
+Stack trace:
+#0 {main}
+  thrown in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:34:24 UTC] PHP Warning:  require(/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php): Failed to open stream: No such file or directory in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:34:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/dggroupi/public_html/client/staging_cariuang/artisan:9
+Stack trace:
+#0 {main}
+  thrown in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:35:30 UTC] PHP Warning:  require(/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php): Failed to open stream: No such file or directory in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:35:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/dggroupi/public_html/client/staging_cariuang/artisan:9
+Stack trace:
+#0 {main}
+  thrown in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:42:24 UTC] PHP Warning:  require(/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php): Failed to open stream: No such file or directory in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9
+[08-Sep-2025 12:42:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/dggroupi/public_html/client/staging_cariuang/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/dggroupi/public_html/client/staging_cariuang/artisan:9
+Stack trace:
+#0 {main}
+  thrown in /home/dggroupi/public_html/client/staging_cariuang/artisan on line 9

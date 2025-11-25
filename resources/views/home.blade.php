@@ -20,7 +20,87 @@
     <link rel="stylesheet" href="{{ asset('assets/css/default.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="canonical" href="{{ url()->current() }}" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17689697869"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17689697869');
+    </script>
+
+
+    <style>
+        .broadcast__card {
+            transition: all 0.3s ease;
+        }
+        .broadcast__card.expired {
+            opacity: 0.6;
+        }
+        .broadcast__card iframe {
+            width: 100%;
+            height: 315px;
+        }
+
+ 
+        .broadcast__card.fade-out {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+
+        
+        /* 🔹 Responsive video wrapper */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 🔹 Responsive adjustments for mobile */
+        @media (max-width: 768px) {
+            .broadcast__card {
+                padding: 1rem;
+            }
+
+            .broadcast__text {
+                font-size: 0.9rem;
+            }
+
+            .badge {
+                font-size: 0.8rem;
+            }
+
+            .section__title h3.title {
+                font-size: 1.2rem;
+            }
+        }
+
+    </style>
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q14C55775R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q14C55775R');
+</script>
 
 <body>
 
@@ -58,19 +138,21 @@
                                     @foreach ($cmsButtons as $button)
                                         @php
                                             $icon = '';
-                                            $target = '_self';
+                                            $target = '_blank';
                                             $buttonName = strtolower($button->name);
                                             if ($buttonName == 'whatsapp') {
                                                 $icon = 'fab fa-whatsapp';
                                             } elseif ($buttonName == 'telegram') {
                                                 $icon = 'fab fa-telegram';
+                                            } elseif ($buttonName == 'pendaftaran'){
+                                                $icon = 'fas fa-dollar-sign';
                                             } else {
                                                 $icon = 'fas fa-link';
                                                 $target = '_blank';
                                             }
                                         @endphp
-                                        <a href="{{ $button->url }}" target="{{ $target }}" class="tg-btn mx-2 mb-2 mb-md-0 d-flex align-items-center justify-content-center text-center">
-                                            <i class="{{ $icon }}"></i>   {{ $button->name }}
+                                        <a href="{{ $button->url }}" target="{{ $target }}" style="padding: 20px 85px;" class="tg-btn mx-2 mb-2 mb-md-0 d-flex align-items-center justify-content-center text-center">
+                                            <i style="margin-right: 5px;" class="{{ $icon }}"></i>   {{ $button->name }}
                                         </a>
                                     @endforeach
                                 </div>
@@ -82,6 +164,69 @@
             </div>
         </section>
         <!-- banner-area-end -->
+         
+        @if ($broadcasts->count())
+        <section class="broadcast__area mt-5">
+            <div class="container">
+                <div class="section__title text-center mb-4">
+                    <h3 class="title">🔴 Live Broadcast</h3>
+                </div>
+
+                <div class="row justify-content-center">
+                    @foreach ($broadcasts as $broadcast)
+                        @php
+                            // Deteksi ID YouTube
+                            preg_match(
+                                '/https?:\/\/(?:www\.)?youtube\.com\/(?:watch\?v=|live\/|embed\/|shorts\/)?([\w\-]+)/i',
+                                $broadcast->konten_broadcast,
+                                $matches
+                            );
+                            $youtubeId = $matches[1] ?? null;
+
+                            // Hapus semua URL YouTube (termasuk parameter ? atau &)
+                            $cleanText = preg_replace(
+                                '/https?:\/\/(?:www\.)?youtube\.com\/[^\s]+/i',
+                                '',
+                                $broadcast->konten_broadcast
+                            );
+                        @endphp
+
+                        <div class="col-lg-8 col-md-10 col-sm-12 mb-4">
+                            <div class="broadcast__card p-4 bg-white shadow rounded text-center">
+                                <h4 class="font-bold mb-3 text-lg sm:text-xl">{{ $broadcast->title }}</h4>
+
+                                @if ($youtubeId)
+                                    <div class="video-wrapper mb-3">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/{{ $youtubeId }}"
+                                            frameborder="0"
+                                            allowfullscreen
+                                            loading="lazy"
+                                            style="border-radius: 10px; width: 100%; height: 100%;"
+                                        ></iframe>
+                                    </div>
+                                @endif
+
+                                <div class="broadcast__text mb-3 text-gray-700 text-sm leading-relaxed">
+                                    {!! nl2br(strip_tags(html_entity_decode(trim($cleanText)))) !!}
+                                </div>
+
+                                <div class="text-center mt-2">
+                                    <span class="badge bg-danger text-white px-3 py-2 rounded-pill text-sm">
+                                        Berakhir dalam:
+                                        <span class="countdown" 
+                                            data-expired="{{ \Carbon\Carbon::parse($broadcast->expired)->format('Y-m-d H:i:s') }}">
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        @endif
+
 
         <!-- faq-area -->
         <section id="faq" class="faq__area section-py-120">
@@ -96,7 +241,7 @@
                         <div class="faq__content" data-aos="fade-left" data-aos-delay="0">
                             <div class="section__title mb-60">
                                 <span class="sub-title">Our Services</span>
-                                <h2 class="title">Get every <span>Our</span> <br> Services</h2>
+                                <h2 class="title">Explore All Exclusive <br> Services</h2>
                             </div>
                             <div class="faq__wrap">
                                 <div class="accordion" id="accordionExample">
@@ -129,8 +274,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="section__title text-center mb-80" data-aos="fade-up" data-aos-delay="0">
-                            <span class="sub-title">roadmap</span>
-                            <h2 class="title">Our <span>strategy</span> & Planning</h2>
+                            <span class="sub-title">strategy & Planning </span>
+                            <h2 class="title">Keunggulan <span>Cari</span> Uang</h2>
                         </div>
                     </div>
                 </div>
@@ -142,8 +287,8 @@
                                     <img src="{{ asset('assets/img/icon/roadmap_icon01.png') }}" alt="icon">
                                 </div>
                                 <div class="roadmap__content">
-                                    <h3 class="title">2014</h3>
-                                    <p>Definitions of key terms in cryptocurrency</p>
+                                    <h3 class="title">FAST</h3>
+                                    <p>Transaksi mulai dari 1 menit</p>
                                 </div>
                             </div>
                         </div>
@@ -153,8 +298,8 @@
                                     <img src="{{ asset('assets/img/icon/roadmap_icon02.png') }}" alt="icon">
                                 </div>
                                 <div class="roadmap__content">
-                                    <h3 class="title">2017</h3>
-                                    <p>Automated tools for executing strategies</p>
+                                    <h3 class="title">FREE</h3>
+                                    <p>Gabung tanpa biaya tambahan</p>
                                 </div>
                             </div>
                         </div>
@@ -164,8 +309,8 @@
                                     <img src="{{ asset('assets/img/icon/roadmap_icon03.png') }}" alt="icon">
                                 </div>
                                 <div class="roadmap__content">
-                                    <h3 class="title">2022</h3>
-                                    <p>APIs for developers to build custom tools</p>
+                                    <h3 class="title">FRIENDLY</h3>
+                                    <p>Dengan adanya bimbingan dan aplikasi yang sangat mudah dipahami</p>
                                 </div>
                             </div>
                         </div>
@@ -175,8 +320,8 @@
                                     <img src="{{ asset('assets/img/icon/roadmap_icon04.png') }}" alt="icon">
                                 </div>
                                 <div class="roadmap__content">
-                                    <h3 class="title">2025</h3>
-                                    <p>A space for users to discuss trends</p>
+                                    <h3 class="title">FIXED</h3>
+                                    <p>Jumlah profit dan risiko yang dapat dipastikan sejak awal</p>
                                 </div>
                             </div>
                         </div>
@@ -207,46 +352,51 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="footer__content">
-                            <h2 class="title">Join with our <span>future</span> of Webzo currency</h2>
+                            <h2 class="title"> TURN OPPORTUNITIES <span>INTO</span> FORTUNE, SMART AND  SIMPLE </h2>
+                            <h3> MAKSIMALKAN PELUANG KEUTUNGAN KALIAN DENGAN BERGABUNG BERSAMA KAMI </h3>
                             <div class="team__social-wrap">
-                                <ul class="list-wrap">
-                                    <li>
-                                        <a href="#!">
-                                            <div class="shape">
-                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
-                                            </div>
-                                            <img src="{{ asset('assets/img/icon/facebook.svg') }}" alt="icon" class="icon">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <div class="shape">
-                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
-                                            </div>
-                                            <img src="{{ asset('assets/img/icon/twitter.svg') }}" alt="icon" class="icon">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <div class="shape">
-                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
-                                            </div>
-                                            <img src="{{ asset('assets/img/icon/telegram.svg') }}" alt="icon" class="icon">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <div class="shape">
-                                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
-                                            </div>
-                                            <img src="{{ asset('assets/img/icon/discord.svg') }}" alt="icon" class="icon">
-                                        </a>
-                                    </li>
-                                </ul>
+                <ul class="list-wrap">
+                    <li>
+                        <a href="https://t.me/adhamcy" target="_blank" rel="noopener noreferrer">
+                            <div class="shape">
+                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
                             </div>
-                        </div>
-                    </div>
-                </div>
+                            <img src="{{ asset('assets/img/icon/telegram.svg') }}" alt="icon" class="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/+19035229093?text=gabung%20grup%20vip" target="_blank" rel="noopener noreferrer">
+                            <div class="shape">
+                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
+                            </div>
+                            <img src="{{ asset('assets/img/icon/wa.svg') }}" alt="icon" class="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://youtube.com/@Adhamcy" target="_blank" rel="noopener noreferrer">
+                            <div class="shape">
+                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
+                            </div>
+                            <img src="{{ asset('assets/img/icon/youtube4.svg') }}" alt="icon" class="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://youtube.com/@taniacy88" target="_blank" rel="noopener noreferrer">
+                            <div class="shape">
+                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
+                            </div>
+                            <img src="{{ asset('assets/img/icon/youtube4.svg') }}" alt="icon" class="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://olymptrade-vid.com/?affiliate_id=512764&subid1=E69&subid2=" target="_blank" rel="noopener noreferrer">
+                            <div class="shape">
+                                <img src="{{ asset('assets/img/icon/icons_bg.svg') }}" alt="shape">
+                            </div>
+                            <img src="{{ asset('assets/img/icon/dollar.svg') }}" alt="icon" class="icon">
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="footer__bottom">
                 <div class="copyright-text">
@@ -276,6 +426,44 @@
     <script src="{{ asset('assets/js/wow.min.js') }}"></script>
     <script src="{{ asset('assets/js/aos.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function updateCountdowns() {
+                document.querySelectorAll(".countdown").forEach(el => {
+                    const expired = new Date(el.dataset.expired).getTime();
+                    const now = new Date().getTime();
+                    const diff = expired - now;
+
+                    if (diff <= 0) {
+                        el.innerHTML = "Expired";
+                        const card = el.closest('.broadcast__card');
+                        if (card && !card.classList.contains("fade-out")) {
+                            card.classList.add("fade-out");
+                            // Hapus elemen setelah animasi selesai (1s)
+                            setTimeout(() => {
+                                card.parentElement.remove();
+                            }, 1000);
+                        }
+                        return;
+                    }
+
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                    el.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+                });
+            }
+
+            updateCountdowns();
+            setInterval(updateCountdowns, 1000);
+        });
+
+    </script>
+
 </body>
+
+
 
 </html>

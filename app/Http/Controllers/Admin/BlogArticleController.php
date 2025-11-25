@@ -33,28 +33,39 @@ class BlogArticleController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'id_kategori' => 'required|exists:kategori,id_kategori',
-            'konten' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'id_kategori' => 'required|exists:kategori,id_kategori',
+        'konten' => 'required|string',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
 
-        $request->merge(['slug' => Str::slug($request->title)]);
+    $slug = Str::slug($request->title);
 
-        $data = $request->all();
+    $originalSlug = $slug;
+    $count = 1;
 
-        if ($request->hasFile('image')) {
-            $imageName = time().'.'.$request->image->extension();
-            $request->image->storeAs('public/images', $imageName);
-            $data['image'] = $imageName;
-        }
-
-        BlogKonten::create($data);
-
-        return redirect()->route('admin.blog-article.index')->with('success', 'Blog content created successfully.');
+    while (\App\Models\BlogKonten::where('slug', $slug)->exists()) {
+        $slug = $originalSlug . '-' . $count++;
     }
+
+    $request->merge(['slug' => $slug]);
+
+    $data = $request->all();
+
+    if ($request->hasFile('image')) {
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->storeAs('public/images', $imageName);
+        $data['image'] = $imageName;
+    }
+
+    BlogKonten::create($data);
+
+    return redirect()
+        ->route('admin.blog-article.index')
+        ->with('success', 'Blog content created successfully.');
+}
 
     /**
      * Display the specified resource.

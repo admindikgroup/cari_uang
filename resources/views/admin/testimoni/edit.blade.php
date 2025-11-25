@@ -21,38 +21,29 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('admin.blog-article.update', $blog_article) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.testimoni.update', $testimoni) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="mb-4">
                             <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Image:</label>
                             <input type="file" name="image" id="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            @if ($blog_article->image)
-                                <img src="{{ asset('storage/images/' . $blog_article->image) }}" alt="{{ $blog_article->title }}" class="mt-4" style="height: 200px;">
+                            @if ($testimoni->image)
+                                <img src="{{ asset('storage/images/' . $testimoni->image) }}" alt="{{ $testimoni->title }}" class="mt-4" style="height: 200px;">
                             @endif
                         </div>
                         <div class="mb-4">
                             <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title:</label>
-                            <input type="text" name="title" id="title" value="{{ old('title', $blog_article->title) }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="id_kategori" class="block text-gray-700 text-sm font-bold mb-2">Category:</label>
-                            <select name="id_kategori" id="id_kategori" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                                <option value="">Select a Category</option>
-                                @foreach ($kategoris as $kategori)
-                                    <option value="{{ $kategori->id_kategori }}" {{ old('id_kategori', $blog_article->id_kategori) == $kategori->id_kategori ? 'selected' : '' }}>{{ $kategori->nama_kategori }}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" name="title" id="title" value="{{ old('title', $testimoni->title) }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                         </div>
                         <div class="mb-4">
                             <label for="konten" class="block text-gray-700 text-sm font-bold mb-2">Content:</label>
-                            <textarea name="konten" id="konten" rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>{{ old('konten', $blog_article->konten) }}</textarea>
+                            <textarea name="konten" id="konten" rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>{{ old('konten', $testimoni->konten) }}</textarea>
                         </div>
                         <div class="flex items-center justify-between">
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                 Update
                             </button>
-                            <a href="{{ route('admin.blog-article.index') }}" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+                            <a href="{{ route('admin.testimoni.index') }}" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
                                 Cancel
                             </a>
                         </div>
